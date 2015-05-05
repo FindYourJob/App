@@ -1,0 +1,15 @@
+{
+    "name": "nodrew/silex-boilerplate",
+    "require": {
+        "silex/silex": "1.0.*@dev",
+        "twig/twig": ">=1.8,<2.0-dev",
+        "phpunit/phpunit": "3.7.*",
+        "squizlabs/php_codesniffer": "1.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Base": "src/",
+            "App": "src/"
+         }
+    }
+}
