@@ -5,8 +5,6 @@ class CrawlerModel
 {
     public function crawl($url)
     {
-        $output = '';
-
         // is cURL installed yet?
         if (!function_exists('curl_init')){
             die('Sorry cURL is not installed!');
@@ -21,7 +19,7 @@ class CrawlerModel
             CURLOPT_URL => $url,
             CURLOPT_USERAGENT => 'Mozilla',
             CURLOPT_SSL_VERIFYPEER => false,
-            CURLOPT_PROXY => "proxyweb.utc.fr:3128"
+            CURLOPT_PROXY => 'proxyweb.utc.fr:3128'
         ));
 
         // Send the request & save response to $resp
