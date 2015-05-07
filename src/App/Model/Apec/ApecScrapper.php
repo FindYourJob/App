@@ -11,19 +11,19 @@ class ApecScrapper extends JobScapper {
     {
         parent::__construct();
 
-        $this->editRegex('jobTitle', '/ma_super_regex/');
-        $this->editRegex('jobUrl', '');
-        $this->editRegex('jobDate', '');
-        $this->editRegex('jobTown', '');
-        $this->editRegex('jobSkills', '');
-        $this->editRegex('jobTraining', '');
-        $this->editRegex('jobType', '');
-        $this->editRegex('jobText', '');
-        $this->editRegex('jobCompany', '');
-        $this->editRegex('jobCrawler', '');
-        $this->editRegex('jobTechnologies', '');
-        $this->editRegex('jobWage', '');
-        $this->editRegex('jobId', '');
+        $this->editRegex('title', '/ma_super_regex/');
+        $this->editRegex('url', '');
+        $this->editRegex('date', '');
+        $this->editRegex('town', '');
+        $this->editRegex('skills', '');
+        $this->editRegex('training', '');
+        $this->editRegex('type', '');
+        $this->editRegex('text', '');
+        $this->editRegex('company', '');
+        $this->editRegex('crawler', '');
+        $this->editRegex('technologies', '');
+        $this->editRegex('wage', '');
+        $this->editRegex('id', '');
     }
 
 }
