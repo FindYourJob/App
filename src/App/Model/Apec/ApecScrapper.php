@@ -2,28 +2,26 @@
 
 namespace App\Model\Apec;
 
-use App\Model\JobScapper;
+use App\Model\JobScrapper;
 
 
-class ApecScrapper extends JobScapper {
+class ApecScrapper extends JobScrapper {
 
     public function __construct()
     {
-        parent::__construct();
-
-        $this->editRegex('title', '/ma_super_regex/');
-        $this->editRegex('url', '');
-        $this->editRegex('date', '');
-        $this->editRegex('town', '');
-        $this->editRegex('skills', '');
-        $this->editRegex('training', '');
-        $this->editRegex('type', '');
-        $this->editRegex('text', '');
-        $this->editRegex('company', '');
-        $this->editRegex('crawler', '');
-        $this->editRegex('technologies', '');
-        $this->editRegex('wage', '');
-        $this->editRegex('id', '');
+        $this->editRegex('title', "/ma_super_regex/");
+        $this->editRegex('url', "");
+        $this->editRegex('date', "/[0-9]{2}\/[0-9]{2}\/[0-9]{4}/");
+        $this->editRegex('town', "");
+        $this->editRegex('skills', "");
+        $this->editRegex('training', "");
+        $this->editRegex('type', "");
+        $this->editRegex('text', "");
+        $this->editRegex('company', "");
+        $this->editRegex('crawler', "");
+        $this->editRegex('technologies', "");
+        $this->editRegex('wage', "");
+        $this->editRegex('id', "");
     }
 
 }

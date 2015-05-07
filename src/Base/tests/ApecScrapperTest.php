@@ -5,6 +5,18 @@ use App\Model\Apec\ApecScrapper;
 
 class ApecScrapperTest extends \PHPUnit_Framework_TestCase
 {
+    public function testApecRegexIsFilled()
+    {
+        $scrapper  = new ApecScrapper();
+
+
+
+        foreach($scrapper->getAttributes() as $attr) {
+
+            $this->assertFalse(empty($attr['regex']));
+        }
+    }
+
     public function testApecIsScrapped()
     {
         $scrapper  = new ApecScrapper();

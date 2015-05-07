@@ -2,7 +2,6 @@
 
 namespace App\Model;
 
-
 class JobScrapper {
     //Extracted attributes
     protected $jobAttributes = array(
@@ -25,11 +24,25 @@ class JobScrapper {
     public function scrap($input){
         $this->clearAttributes();
 
+        //true: OK (default)
+        //false: NOK (a regex is empty || a result is empty)
+        $returnCode = true;
+
         foreach($this->jobAttributes as $attr => $val){
-            preg_match($val['regex'], $input, $this->jobAttributes[$attr]['result']);
+            if(empty($val['regex'])) {
+                $returnCode = false;
+            }
+            else {
+                var_dump($val);
+                preg_match($val['regex'], $input, $this->jobAttributes[$attr]['result']);
+
+                if(empty($this->jobAttributes[$attr]['result'])){
+                    $returnCode = false;
+                }
+            }
         }
 
-        return true;
+        return $returnCode;
     }
 
     public function clearAttributes(){

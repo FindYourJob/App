@@ -17,5 +17,6 @@ class RootRouter implements RouterInterface
 
         $app->get('/hello/{name}', 'App\Controller\RootController::helloAction');
         $app->get('/crawl', 'App\Controller\RootController::crawlAction');
+        $app->get('/scrap', 'App\Controller\RootController::scrapAction');
     }
 }
