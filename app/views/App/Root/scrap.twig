@@ -1,7 +1,5 @@
 {% extends "/layout.twig" %}
 
-<ul>
-    {% for item in content %}
-        <li>{{ item.result }}</li>
-    {% endfor %}
-</ul>
+{% for key,value in content %}
+    {{ value.result }}
+{% endfor %}

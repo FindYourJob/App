@@ -33,11 +33,12 @@ class JobScrapper {
                 $returnCode = false;
             }
             else {
-                var_dump($val);
                 preg_match($val['regex'], $input, $this->jobAttributes[$attr]['result']);
 
                 if(empty($this->jobAttributes[$attr]['result'])){
                     $returnCode = false;
+                }else{
+                    unset($this->jobAttributes[$attr]['result'][0]);
                 }
             }
         }
