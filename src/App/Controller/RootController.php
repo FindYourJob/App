@@ -22,7 +22,7 @@ class RootController extends Controller
     public function scrapAction()
     {
         $scrapper  = new ApecScrapper();
-        $scrapper->scrap(file_get_contents('./sample.html'));
+        $scrapper->scrap(utf8_encode(file_get_contents('./sample.html')));
         $content = $scrapper->getAttributes();
         var_dump($content);
         return $this->render('scrap', array('content' => $content));
