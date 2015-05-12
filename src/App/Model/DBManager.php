@@ -12,9 +12,14 @@ class DBManager {
      */
     private static $instance;
 
+    /**
+     * @var \PDO
+     */
+    private $db;
+
     private function __construct()
     {
-        // Your "heavy" initialization stuff here
+        $this->connect();
 
     }
 
@@ -27,14 +32,105 @@ class DBManager {
         return self::$instance;
     }
 
-    //Called by DBManager::connect();
-    public static function connect()
+    private function connect()
     {
         require __DIR__.'/serverConfig.php';
+        /**
+         * @var string $db_host
+         * @var string $db_base
+         * @var string $db_user
+         * @var string $db_pass
+         */
 
-        $db = new PDO('mysql:host='.$db_host.';dbname='.$db_base.';charset=utf8', $db_user, $db_pass);
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+        $this->db = new \PDO('mysql:host='.$db_host.';dbname='.$db_base.';charset=utf8', $db_user, $db_pass);
+        $this->db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+        $this->db->setAttribute(\PDO::ATTR_EMULATE_PREPARES, false);
     }
+
+    public function insert($input){
+        $expected = array(
+            'title',
+            'url',
+            'date',
+            'town',
+            'skills',
+            'training',
+            'type',
+            'text',
+            'company',
+            'crawler',
+            'technologies',
+            'wage',
+            'id'
+        );
+
+        try {
+            $queryString = 'INSERT INTO mytable VALUES (';
+
+            foreach($expected as $attr){
+                if (!isset($input[$attr])) {
+                    if($expected[0] != $attr)
+                        $queryString.= ', ';
+                    $queryString.= ':'.$attr;
+                }else{
+                    throw \RuntimeException('DBManager: insert: Expected field \'' . $attr . '\' before insertion');
+                }
+            }
+
+            $queryString.=');';
+
+            $query = $this->db->query($queryString);
+            foreach($expected as $attr){
+                $query->bindParam(':'.$attr, $input[$attr]);
+            }
+            $query->execute();
+
+        }catch(\Exception $e){
+            $this->logError('insert', $e);
+        }
+    }
+
+    public function select($what, $from, $where = '', $where_param = array()){
+
+        try {
+            $queryString = 'SELECT ';
+
+            if(empty($what) || empty($from))
+                throw new \RuntimeException('DBManager: select: $what and $from must not be empty');
+
+            foreach($what as $attr){
+                if($what[0] != $attr)
+                    $queryString.= ', ';
+                $queryString.= $attr;
+            }
+
+            $queryString.=' FROM '.$from;
+
+            if(!empty($where))
+                $queryString.= ' WHERE '.$where;
+
+            $query = $this->db->query($queryString);
+            foreach($where_param as $param => $value){
+                $query->bindParam(':'.$param, $value);
+            }
+            $query->execute();
+
+        }catch(\Exception $e){
+            $this->logError('select', $e);
+        }
+    }
+
+    /**
+     * Logs errors happening in database context
+     * @param string $param
+     * @param \Exception $exception
+     * @throws \Exception
+     */
+    private function logError($param, \Exception $exception){
+        //As a debug, we throw the exception instead of logging it
+        echo 'Param: '.$param;
+        throw $exception;
+    }
+
 }
 
