@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Model\Apec\ApecScrapper;
+use App\Model\DBManager;
 use Base\Controller\Controller;
 use App\Model\CrawlerModel;
 
@@ -26,5 +27,11 @@ class RootController extends Controller
         $content = $scrapper->getAttributes();
         var_dump($content);
         return $this->render('scrap', array('content' => $content));
+    }
+
+    public function connectAction()
+    {
+        $DB = DBManager::getInstance();
+        return $this->render('connect');
     }
 }
