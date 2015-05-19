@@ -1,0 +1,972 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ms="urn:schemas-microsoft-com:xslt" xmlns:akamai="http://www.akamai.com/xslt/1.0">
+  <head xmlns="">
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+    <title>
+    TECHNICIEN SUPPORT APPLICATIF PROGICIEL DE GESTION - SQL-SERVER (H/F) - Offre d'emploi -  Etampes 91150, Ile De France France
+  </title>
+  
+<script language="Javascript" type="text/javascript">
+function wrap(EL, chars)
+
+{
+	var IE6 = (navigator.userAgent.indexOf("MSIE 6")>0)?true:false;
+	var microspace = String.fromCharCode('8203');
+	if (IE6) microspace = "<img src='http://media.monster.com/jobview_standard/images/pixel.gif' height=1 width=1>";
+	
+	skipcode = /(<!-{2}\s(?:\n|.)*?\s-{2}>|<(?:\n|[^'">]|'(?:\n|[^'])*?'|"(?:\n|[^"])*?")*?>|&\S+?;|\bhttp:\/\/|\s+)/i; // "
+	
+	wrapchars = /([\/\?\.\+%@\=])/;
+	
+	outstr = '';
+	
+	instr = EL.innerHTML;
+	
+	inpos = 0;
+	
+	while (inpos < instr.length) {
+		parseto = instr.substr(inpos).search(skipcode);
+		
+		if (parseto == 0) {
+		    matched = instr.substr(inpos).match(skipcode);
+		    outstr += matched[0];
+		    inpos += matched[0].length;
+		} else {
+			if (parseto < 0) {
+				parseto = instr.substr(inpos).length;
+			}  
+
+			wrapat = instr.substr(inpos,parseto).search(wrapchars);
+			
+			if ((chars > 0) && ((wrapat > chars) ||
+				((wrapat < 0) && (parseto > chars)))) {
+				
+				wrapat = chars-1;
+			}
+			
+			if (wrapat >= 0) {
+				outstr += instr.substr(inpos, wrapat+1) + microspace;
+				inpos += wrapat+1;
+			} else {
+				outstr += instr.substr(inpos,parseto);
+				inpos += parseto;
+			}
+		}
+	}
+	
+	EL.innerHTML = outstr;
+}
+
+function spanwrap()
+{
+	spans = document.getElementsByTagName("span");
+	var brwsr = ((/Firefox[\/\s](\d+\.\d+)/.test(navigator.userAgent)) || (/Opera[\/\s](\d+\.\d+)/.test(navigator.userAgent)))?true:false;
+	if (brwsr) {
+		wrap(document.getElementById("jobBodyContent"), 75);
+	}
+	
+	for (var i = 0; i < spans.length; i++) {
+		//only insert wrap characters in jobbody for firefox & opera
+		if (spans[i].className.toLowerCase() == 'wrappable') {
+			wrap(spans[i], 15);
+		}
+		
+	}
+}
+
+function on_load() {
+	spanwrap();
+	var tables = document.getElementsByTagName("table");
+	for (x in tables) {
+		if (tables[x].offsetWidth > 500) tables[x].style.width = "500px";
+	}
+}
+
+function removeLogo() {
+	replaceImg = "http://media.monster.com/jobview_standard/images/pixel.gif";
+	document.getElementById("companyLogo").src = replaceImg;
+	document.getElementById("companyNameHeader").style.display = "block";
+}
+
+function newWin(videourl)
+{
+	msgWindow=window.open(videourl,"JobVideo","width=640, height=480,resizable=yes, status=no, titlebar=no, toolbar=no, location=no, scrollbars=no, menubar=no");
+}
+
+/** DEV00307702  - disable every anchor link for JobPostingPreview**/
+function disableAnchor()
+{
+	var sideCol = document.getElementById('sidecol');
+	
+	if (sideCol)
+	{
+		var divElm = sideCol.getElementsByTagName('div');
+		
+		for (var i = 0; i < divElm.length; i++)
+		{
+			if(divElm[i].className.toLowerCase() == 'sidecolbox')
+			{
+				var anchorElm = divElm[i].getElementsByTagName('a');
+				
+				for(var k = 0; k < anchorElm.length; k++)
+				{
+					var hrefAttr = anchorElm[k].getAttribute('href');
+					if (hrefAttr && hrefAttr != "" && hrefAttr != null)
+					{
+						anchorElm[k].setAttribute('href_bak', hrefAttr);
+					}
+					anchorElm[k].removeAttribute('href');
+				}
+			}
+		}		
+	}
+}
+</script>
+<style type="text/css" media="print">
+        
+div#monsterAppliesHeaderHolder, div#monsterAppliesFooterHolder, div.AppliesFooterHolder  { display: none; }
+.skip {height: 1px;left: -10000px;overflow: hidden;position: absolute;width: 1px;}
+body 
+{ 
+    font-size: 12pt; 
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    color: #000; 
+    margin: 0; 
+    padding: 0; 
+    background: white; 
+    overflow: visible !important;
+}
+
+#outerwrapper { width: 100%;  margin: 0; }
+#bodycol { width: 100%; float: none !important; margin-bottom: 0; }
+
+#jobheader { width: 100%; height: auto; }
+#jobheader p { color: #97a6b2; font-size: 150%; float: none !important; margin: 0; padding-bottom: 0; height: auto; }
+#jobheader img { border: none; }
+#jobheader img.logo { border: none; margin: 0 0 20px 0; float: left; }
+#jobheader #subicons { float: right; margin: 0 10px 0 0; }
+#jobheader #subicons img { border: none; margin: 5px; }
+
+#jobwrapper { width: 100%; margin: 0; float: none!important; }
+
+#jobsummary { width: 100%; float: none !important; margin: 0; }
+#jobsummary_content h2 { color: #6d369a; font-weight: bold; font-size: 100%; border-bottom: 1px dotted #666; padding-bottom: 3px; margin: 0; }
+#jobsummary_content dl { color: #000; font-size: 75%; margin-top: 10px; }
+#jobsummary_content dt { font-weight: bold; line-height: 1.25em; }
+#jobsummary_content dd { font-weight: normal; margin: 0 0 10px 0; line-height: 1.25em; }
+#jobsummary_content dd.multipledd { margin-bottom: 3px; }
+#jobsummary_content dd.multipleddlast { margin-bottom: 10px; }
+
+#jobcopy {  width: 100%; float: none !important; margin: 0; display: block; overflow: hidden !important;}
+#jobcopy h1 { color: #728d2e; font-size: 140%; margin: 0 0 10px 0; font-weight: bold; }
+#jobcopy h2 { color: #6d369a; font-weight: bold; font-size: 100%; border-bottom: 1px dotted #666; padding-bottom: 3px; margin: 0; }
+#jobcopy p { color: #000; line-height: normal; font-size: 85%; margin: 0; min-height: 13px; _height: 13px; }
+#jobcopy li { color: #000; line-height: 1.5em; font-size: 85%; margin-bottom: 5px; }
+#jobcopy a { text-decoration: underline; color: #564060; }
+
+#jobBodyContent { width: 100%; height: auto; }
+
+#sidecol { width: 100%; float: none !important; margin: 0; }
+#sidecol .sidecolbox { margin-bottom: 10px; padding: 0 0 10px 0; }
+#sidecol .sidecolbox ul { list-style: none; margin: 0 0 0 1px; width: 179px; padding: 0 0 3px 0; }
+#sidecol .sidecolbox ul li.apply { border-bottom: none; padding: 0px 0 7px 0; margin: 0 0 4px 0; }
+#sidecol .sidecolbox ul li.print { border-bottom: none; padding: 0px 0 7px 0; margin: 0 0 4px 0; }
+#sidecol .sidecolbox ul li.save { border-bottom: none; padding: 0px 0 7px 0; margin: 0 0 4px 0; }
+#sidecol .sidecolbox ul li.share { padding: 2px 0 7px 0; margin: 0; }
+#sidecol .sidecolbox ul li.video { padding: 5px 0 7px 0; margin: 0 0 4px 0; }
+#sidecol .sidecolbox ul li.video a { font-weight: bold; } 
+#sidecol .sidecolbox ul li a { text-decoration: underline; color: #564060; font-size: 80%; }
+#sidecol .sidecolbox h2 {  color: #6d369a; font-weight: bold; font-size: 100%; border-bottom: 1px dotted #666; padding-bottom: 3px; margin: 0;  }
+#sidecol .sidecolbox h3 { font-size: 100%; color: #6d369a; font-weight: bold; border: 1px solid #ccc; padding: 8px 0 8px 12px; margin: 0 0 10px 0; width: auto; }
+#sidecol .sidecolbox h4 { font-size: 85%; margin: 0px 12px; line-height: 1.25em; color: #564060; font-weight: bold; }
+#sidecol .sidecolbox p { font-size: 85%; margin: 0px 12px 10px 0; line-height: 1.25em; }
+#sidecol .sidecolbox strong { color: #564060; font-weight: bold; }
+
+#jobtools, #companytools { display: none; }
+          
+      </style>
+    <style type="text/css" media="screen">
+        
+/* CSS Document */
+html {overflow-x: hidden;overflow-y: auto;} 
+body { font-size: small; font-family: Arial,Helvetica,sans-serif; color: #333; margin: 0; padding: 0; }
+
+em {font-style:italic;}
+
+#incomplete {width: 765px; margin: 2px auto; padding:20px;}
+#incompleteleft {float: left; width:30px; padding: 0 0 0 135px;}
+#incompleteright {float: left; width:588px; padding: 0 3px 0 0; font-size:85%; line-height:normal;}
+
+#monsterheader img { display:none; }
+#outerwrapper { width: 970px; padding: 10px 0 10px 0; margin: 0 auto; overflow:hidden;}
+#bodycol { width: 765px; background: #ffffff url(http://media.newjobs.com/jobview_standard/images/jobwrapperbg.gif) repeat-y; padding-bottom: 0; float: left; margin-bottom: 10px; }
+#bodycolbottom { width: 765px; height: 31px; background:#FFFFFF url(http://media.newjobs.com/jobview_standard/images/bodycolbottom.gif) bottom left no-repeat; float: left; }
+
+
+#jobheader {width: 765px; background: #fff url(http://media.newjobs.com/jobview_standard/images/jobheaderbg.gif) repeat-y; height: auto; overflow: hidden;}
+#jobheadertop { width: 765px; height: 11px; background: #fff url(http://media.newjobs.com/jobview_standard/images/jobheader_top.gif) no-repeat bottom left; padding: 0; }
+#jobheader p { color: #97a6b2; font-size: 200%; float: left; margin: 30px 0 0 20px; }
+#jobheader a p#companyNameHeader { color: #97a6b2; font-size: 200%; float: left; margin: 20px 0 20px 10px; text-decoration: none; cursor: pointer; }
+#jobheader p#companyNameHeader { color: #97a6b2; font-size: 200%; float: left; margin: 20px 0 20px 10px; }
+#jobheader img { border: none; }
+#jobheader img.logo { border: none; margin: 20px 0 20px 15px; float: left; }
+#jobheader #subicons { float: right; margin: 0 10px 0 0; }
+#jobheader #subicons img { border: none; margin: 5px; }
+#jobheaderbottom { width: 765px; height: 13px; background: #fff url(http://media.newjobs.com/jobview_standard/images/jobheaderbottom.gif) no-repeat top left; padding: 0; margin-bottom: 0; }
+
+
+#jobwrapper { width: 721px; margin: 0; float: left; display: inline; padding-left:5px; }
+#jobwrappertop2 { width: 765px; height: 26px; background: #fff url(http://media.newjobs.com/jobview_standard/images/jobwrappertop2.gif) no-repeat top left; margin-top: -4px; }
+
+
+#jobsummary { width: 176px; background: #fff url(http://media.newjobs.com/jobview_standard/images/jobdata_bg.jpg) no-repeat top left; float: left; margin: 10px; }
+#jobsummary_content { margin: 12px 23px 0 25px; word-wrap:break-word; }
+#jobsummary_content h2 { color: #6d369a; font-weight: bold; font-size: 100%; border-bottom: 1px dotted #666; padding-bottom: 3px; margin: 0; }
+#jobsummary_content dl { color: #000; font-size: 80%; margin-top: 10px; }
+#jobsummary_content dt { font-weight: bold; line-height: 1.25em; }
+#jobsummary_content dd { font-weight: normal; margin: 0 0 10px 0; line-height: 1.25em; }
+#jobsummary_content dd.multipledd { background: url(http://media.newjobs.com/jobview_standard/images/purple_bullet.gif) no-repeat top left; padding-left: 16px;  margin-bottom: 3px; }
+#jobsummary_content dd.multipleddlast { background: url(http://media.newjobs.com/jobview_standard/images/purple_bullet.gif) no-repeat top left; padding-left: 16px; margin-bottom: 10px; }
+
+#jobcopy { width: 510px; float: left; margin: 18px 5px 10px 0; overflow: hidden;}
+#jobcopy h1 { color: #728d2e; font-size: 140%; line-height: normal; font-weight: normal; margin: 0 0 0 0; }
+#jobcopy h2 { color: #6d369a; font-size: 100%; font-weight: bold; margin-bottom: 5px; }
+#jobcopy p { color: #000; margin: 0; min-height: 13px; _height: 13px; }
+
+#jobBodyContent { font-size: 11px; line-height: normal; word-wrap:break-word; }
+#jobBodyContent h1{ font-size: 165%; line-height: 1.5em; }
+#jobBodyContent h2 { font-size: 115%; }
+#jobBodyContent h3 { font-size: 112%; }
+#jobBodyContent h4 { font-size: 11px; }
+#jobBodyContent h5 { font-size: 11px; }
+#jobBodyContent h6 { font-size: 11px; }
+#jobBodyContent p.MsoNormal { margin: 0; }
+#jobBodyContent li.MsoNormal { margin: 0; }
+#jobBodyContent ol { margin-bottom: 0; margin-top:1em; line-height: 13px;}
+#jobBodyContent ul { margin-bottom: 0; margin-top:13px; line-height: 13px;}
+
+#sidecol { width: 180px; float: left; margin: 110px 0 0 20px; padding-bottom: 20px; word-wrap:break-word;}
+#sidecol .sidecolbox { margin-bottom: 10px; padding: 0 0 10px 0; }
+.sidecolboxtop { background:transparent url(http://media.newjobs.com/jobview_standard/images/sidebar_header_top.gif) no-repeat scroll left bottom; height: 6px; width: 180px; float:left; margin:0pt 10px; }
+#sidecol .sidecolboxtop { background:transparent url(http://media.newjobs.com/jobview_standard/images/sidebar_header_top.gif) no-repeat scroll left bottom; height: 6px; width: 180px; float:none; margin:0; }	
+#sidecol .sidecolbox ul { list-style: none; margin: 0 0 0 1px; width: 179px; padding: 0 0 3px 0; }
+#sidecol .sidecolbox ul li { border-bottom:1px solid #CCC; padding: 4px 10px 7px 0; }
+#sidecol .sidecolbox ul li.last { border-bottom:none; }
+#sidecol .sidecolbox ul li.print { background: url(http://media.newjobs.com/jobview_standard/images/2011.02/print-16x16_icon.png) no-repeat 0 0; padding-left:30px; padding-top:0; margin-top:7px;  }
+#sidecol .sidecolbox ul li.save { background: url(http://media.newjobs.com/jobview_standard/images/2011.02/save-16x16_icon.png)  no-repeat 0 0; padding-left:30px; padding-top:0; margin-top:7px; }
+#sidecol .sidecolbox ul li.share { background: url(http://media.newjobs.com/jobview_standard/images/2011.02/email-16x16_icon.png) no-repeat 0 0; padding-left:30px; padding-top:0; margin-top:7px;  }
+#sidecol .sidecolbox ul li.resume { background: url(http://media.newjobs.com/jobview_standard/images/2011.02/notice-16x16_icon.png) no-repeat 0 0; padding-left:30px; padding-top:0; margin-top:7px;  }
+#sidecol .sidecolbox ul li.addthis { background: url(http://media.newjobs.com/jobview_standard/images/2011.02/addthis-share-16x16_icon.png) no-repeat 0 0; padding-left:30px; padding-top:0; margin-top:7px;  }
+
+#sidecol .sidecolbox ul li.video { background: url(http://media.newjobs.com/jobview_standard/images/2011.02/icon19x19_video.gif) no-repeat 0 0; padding-left:30px; padding-top:0; margin-top:7px;  }
+#sidecol .sidecolbox ul li.video a { font-weight: bold; } 
+#sidecol .sidecolbox ul li a { text-decoration: none; color: #0d51ab; font-size: 11px; padding-right: 5px;}
+.previewJobHiring ul li a { cursor:default;}
+#sidecol .sidecolbox h2 { text-transform:uppercase; font-size: 100%; font-weight: bold; margin: 0; display: block; padding: 6px 0 10px 0;}
+#sidecol .sidecolbox h3 { background-color: #f8f9f4; font-size: 100%; color: #564060; font-weight: bold; border: 1px solid #ccc; padding: 8px 0 8px 12px; margin: 0 0 10px 0; width: auto; }
+#sidecol .sidecolbox h4 { font-size: 85%; margin: 0px 12px; line-height: 1.25em; color: #564060; font-weight: bold; }
+#sidecol .sidecolbox p { font-size: 85%; margin: 0px 12px 10px 12px; line-height: 1.25em; }
+#sidecol .sidecolbox strong { color: #564060; font-weight: bold; }
+#sidecol .sidecolbox a { text-decoration: underline; color: #564060; }
+
+#sidecol .sidecolboxcollapsed h2 { background: #fff url(http://media.newjobs.com/jobview_standard/images/sidebar_header_btm2.gif) no-repeat bottom left; height: auto; font-size: 100%; color: #564060; font-weight: bold; margin: 0; display: block; padding: 5px 12px 22px 12px;}			
+#sidecol .sidecolboxcollapsed h2 a { color: #564060; }
+
+#sidecol .apply 
+{ 
+    margin:2px 0 20px; 
+}
+#sidecol .apply > a, #sidecol .apply button {
+    font-family: inherit; /* fix FF buttons */
+    background: url("http://media.newjobs.com/jobview_standard/images/applyBtn.png") no-repeat 0 0;
+    height: 20px;
+    cursor: pointer;
+    border-right: 1px solid #bbb;
+    color: #673695;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 7px 14px 7px 45px;
+    text-decoration: none;
+    text-transform: uppercase;
+    outline: none;
+    display: inline-block;
+    *display: inline; /* IE7 fix */
+    *zoom: 1; /* IE7 fix */
+}
+#sidecol .apply button {height: 34px;border: 0px none;border-right: 1px solid #bbb;*background-position: -2px -1px;*background-color: #bbb;*padding: 7px 5px 7px 25px;*border: 1px solid transparent; }
+#sidecol .apply a:hover, #sidecol .apply button:hover {
+    color: #893cd1;    
+}
+
+#sidecol .apply a:active, #sidecol .apply button:active {
+    color: #673695;
+    background: url("http://media.newjobs.com/jobview_standard/images/applyBtnActive.png") no-repeat 0 0;
+}
+/* safari and chrome aka webkit are off by 1px */ 
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    #sidecol .apply > a {padding: 8px 14px 6px 45px;}
+}
+
+#sidecol .apply_btn { text-align: center; }
+
+.apply_btn a, .apply_btn button { font-family: inherit;cursor: pointer;background:url(http://media.newjobs.com/jobview_standard/images/apply_btn_bg.jpg) #c15a20 repeat-x;  height: 10px; border: 1px outset #ea9957; color: #fff; font-weight: bold; font-size: 85%; text-decoration: none; padding:3px 10px 4px 10px; }
+.apply_btn button {height: 24px;}
+#monsterAppliesPageWrapper { text-align:left; }
+         
+          
+      </style><!--[if lt IE 7]>
+<style type="text/css" media="screen">
+#sidecol { margin-top: -5px; }
+#jobheader img.logo, #jobheader a p#companyNameHeader { margin-bottom: 10px; }
+#jobcopy { width: 500px;}
+</style>
+					<![endif]--><meta name="description" content="Voir l'annonce emploi de technicien support applicatif progiciel de gestion - sql-server (h/f) à etampes en Ile de France et trouver toutes les offres d'emploi de EVERWIN | Monster.fr" /><script type="text/javascript"> var monetateT = new Date().getTime(); (function() { var p = document.location.protocol; if (p == "http:" || p == "https:") { var m = document.createElement("script"); m.type = "text/javascript"; m.src = (p == "https:" ? "https://s" : "http://") + "e.monetate.net/js/2/a-2c0fdfab/p/monster.fr/entry.js"; var e = document.createElement("div"); e.appendChild(m); document.write(e.innerHTML); } })(); </script>
+<!-- ucMeta -->
+<META HTTP-EQUIV="expires" CONTENT="Thu, 11 Jun 2015 14:09:15 GMT">
+<META NAME="GOOGLEBOT" CONTENT="unavailable_after: Thu, 11 Jun 2015 14:09:15 GMT">
+
+<meta http-equiv="Content-Type" content="text/html" />
+<meta name="y_key" content="72ab3192e843eab1" />
+<script type="text/javascript" src="http://oas.monster.com/Scripts/oas_analytics.js" language="javascript"></script>
+<!-- content added by Allpies BEGIN-->
+
+<!-- Global specific JS -->
+<script src="http://js-seeker.newjobs.com/r/FRFR/v4.1.2.2849/global/jquery-1.4.2.min_js.axd" type="text/javascript"></script>
+<script src="http://js-seeker.newjobs.com/r/FRFR/v4.1.2.2849/global/parseUri_js.axd" type="text/javascript"></script>
+<script src="http://js-seeker.newjobs.com/r/FRFR/v4.1.2.2849/global/seekerglobal_js.axd" type="text/javascript"></script>
+<script src="http://js-seeker.newjobs.com/r/FRFR/v4.1.2.2849/global/seeker/s.scriptLoader_js.axd" type="text/javascript"></script>
+<script src="http://js-seeker.newjobs.com/r/FRFR/v4.1.2.2849/global/seeker/cantrack_js.axd" type="text/javascript"></script>
+<script src="http://js-seeker.newjobs.com/r/FRFR/v4.1.2.44/jobviewapply/testformobile_js.axd" type="text/javascript"></script>
+<script src="http://js-seeker.newjobs.com/r/FRFR/v4.1.2.2453/jobview/Logging_js.axd" type="text/javascript"></script>
+<script src="http://js-seeker.newjobs.com/r/FRFR/v4.1.2.2849/global/seeker/adobeTracking_js.axd" type="text/javascript"></script>
+<script src="http://js-seeker.newjobs.com/r/FRFR/v4.1.2.2849/global/jquery_addons/jquery.cookie_js.axd" type="text/javascript"></script>
+
+
+<!--[if lt IE 7]>
+<link href="http://css-seeker.newjobs.com/r/FRFR/v4.1.2.2829/jobviewapply/iepngfixes_css.axd" rel="stylesheet" type="text/css" />
+<![endif]-->
+<link href="http://css-seeker.newjobs.com/r/FRFR/v4.1.2.2829/jobviewapply/ApplyConsole_css.axd" rel="stylesheet" type="text/css" /><link href="http://css-seeker.newjobs.com/r/FRFR/v4.1.2.2684/jobview/ApplyConsole_logooverwrite_css.axd" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" language="javascript">function addAtlasApplyStartTag(){$('#Atlas_ApplyStart').remove();$('body').append('<div id="Atlas_ApplyStart"><img height="1" width="1" src="http://switch.atdmt.com/action/monsef_applystart_10/v3/10.5.199.241-3404830928.30446132/NULL" alt="" /><img width="1" height="1" src="http://aimfar.solution.weborama.fr/fcgi-bin/adprofil.fcgi?k=monsterapply&v=0&r=max"> <img src="http://aimfar.solution.weborama.fr/fcgi-bin/tracking.fcgi?idcli=4&adv=2815" width="1" height="1"></div>');}</script>
+<script type="text/javascript" language="javascript"><!--
+var jobPopup150591500;
+var MONS_LOG_VARS = { //LoggingVars
+JobID : 150591500, 
+ApplyType : 3, 
+PopUpMessage: 'Your pop-up blocking software is preventing proper operation of jobsearch site', 
+EE: 'EAAQrXuZmYIUF5avSTEZs5tdZQ--', 
+ApplyOnlineUrl: 'http://mon.monster.fr/applyStart.asp?jobid=150591500&redirect=http%3a%2f%2foffres.monster.fr%2frechercher%2fInformatique-Technologies_4', 
+TrackingCompany: 'EVERWIN', 
+TrackingLogo: '', 
+JobWinPopup : jobPopup150591500, 
+YTA : 0, 
+LogUrl :'http://offre-emploi.monster.fr/log.ashx?PositionAdID=150591500&folderid=187368860&tracking=EAAQbRxpwOLd6kCuFIT4sXKgWw--&logtype='
+}
+//--></script>
+
+
+<!-- start of Monster Career Ad Network markup -->
+<script type="text/javascript">
+_s.my.canTrack.trackI();
+</script>
+<!-- end of Monster Career Ad Network markup -->
+
+
+
+<link id="ucMeta_favIcon" rel="shortcut icon" href="http://media.newjobs.com/favicon.ico"></link>
+<meta name="robots" content="noarchive" /><link rel="canonical" href="http://offre-emploi.monster.fr/technicien-support-applicatif-progiciel-de-gestion-sql-server-h-f-offre-emploi-etampes-ile-de-france-150591500.aspx" /><!-- @N: 212 -->
+
+<link href="http://css-seeker.newjobs.com/r/FRFR/v4.1.2.2918/global/51.browserAlerts_css.axd" rel="stylesheet" type="text/css" />
+<link href="http://css-seeker.newjobs.com/r/FRFR/v4.1.2.2684/jobview/13.YahooAds_css.axd" rel="stylesheet" type="text/css" />
+
+
+    <script type="text/javascript">
+        function acceptInterruptCookie() {
+            $('#interruptModalOverlay').hide();
+            $('#interruptmodalContainer').hide();
+            var date = new Date();
+            date.setTime(date.getTime() + 8 * 60 * 60 * 1000);
+            var oCookie = "BrowserAlertsManager_SuppressWarning_0=true; expires=" + date.toGMTString() + "; path=/; domain=.monster.fr";
+            document.cookie = oCookie;
+       
+        }
+    </script>
+
+
+<!-- ltlBodyContent -->
+</head>
+  <body onload="on_load();"><!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TKJC5X"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TKJC5X');</script>
+<!-- End Google Tag Manager --><!-- Ensighten Tag Insertion Manager --><script type="text/javascript" src="//nexus.ensighten.com/monster/Bootstrap.js"></script><!-- End Ensighten Tag Insertion Manager --><div style="display:none;"></div>
+    <div id="monsterAppliesPageWrapperCover"></div><div id="monsterAppliesPageWrapper">
+<!-- Skip to links -->
+<div style="height: 1px;left: -10000px;overflow: hidden;position: absolute;width: 1px;"><a class="skip" href="#bodycol">Passer à la description de poste</a> | <a class="skip" href="#sidecol">Passer aux outils de recherche d’emploi</a></div>
+<!-- mnsNav -->
+<div id="monsterAppliesHeaderHolder">
+  <div id="mAH_top">
+    <div id="monsterAppliesHeaderHolder_Overflow"><A href="http://www.monster.fr?disRe=true" id="logo_monster_apply" alt="Offre d'emploi" title="Offre d'emploi" mns_rt="nav"><span>Offre d'emploi</span></A><div class="mainMenuHeader">
+        <div class="mainMenuHeaderBorderLeft">
+          <div class="mainMenuHeaderBorderLeftTop"></div>
+          <div class="mainMenuHeaderBorderLeftBottom"></div>
+        </div>
+        <div class="mainMenuHeaderCentral">
+          <div class="mainMenuHeaderCenterTop">
+            <ul>
+              <li class="mAH_firstLi"><a href="http://mon.monster.fr/Resume/ManageResumes" mns_rt="nav" title="CV">CV</a></li>
+              <li><a href="http://offres.monster.fr" mns_rt="nav" title="Offres d'emploi">Offres d'emploi</a></li>
+              <li><a href="http://ressources.monster.fr" mns_rt="nav" title="Mes outils">Mes outils</a></li>
+              <li><a href="http://portails.monster.fr/communities/default.aspx" mns_rt="nav" title="Portails">Portails</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="mainMenuHeaderBorderRight">
+          <div class="mainMenuHeaderBorderRightTop"></div>
+          <div class="mainMenuHeaderBorderRightBottom"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="monsterAppliesHeaderHolder_minWidth"></div>
+</div>
+
+
+
+
+
+
+
+<div id="liteRegDiv">
+  <link href="http://css-seeker.newjobs.com/r/FRFR/v4.1.2.2829/jobviewapply/LiteReg_css.axd" rel="stylesheet" type="text/css" />
+
+
+
+
+
+<div id="liteRColumn">
+    
+<script type="text/javascript">
+    function LiteRegSubmitFce()
+    {
+        var dLitReg = $("#liteRegDiv");
+        var eValue = $(dLitReg).find("#EmailAddressLitReg").val() + ";";
+        var cbPrivacy = $(dLitReg).find("#PrivacyLitReg");
+        if (cbPrivacy.length > 0) {
+            eValue = eValue + (cbPrivacy.is(":checked") ? "1" : "0");
+        }
+        else {
+            eValue = eValue + "-1";
+        }
+        $.cookie("email_lit_reg", eValue, { path: "/", domain: _g.getHostName() });
+
+        if (window.location.search.indexOf("ac=subscribe") >= 0) {
+            window.location.reload(true);
+            return false;
+        }
+        if (window.location.search.indexOf("ac=add") >= 0) {
+            window.location.search = window.location.search.replace("ac=add", "ac=subscribe");
+            return false;
+        }
+        window.location.search += (window.location.search.indexOf("?") == -1) ? "?ac=subscribe" : "&ac=subscribe";
+        return false;
+    };
+</script>
+
+    <div class="litRegLeft">
+        <div class="litRegHeaderIcon"></div>
+        <div class="litRegHeader">
+            <p class="fnt12">
+                Recevez des offres similaires par email pour
+            </p>
+            <p class="fnt11">
+                <span id="lblCriteria" title="TECHNICIEN SUPPORT APPLICATIF PROGICIEL DE GESTION - SQL-SERVER (H/F)">TECHNICIEN SUPPORT APPLICATIF ...</span>
+            </p>
+        </div>
+    </div>
+    <div class="litRegRight">
+        <fieldset>
+            <label class="litReg">
+                <strong class="fnt5 ">
+                    Saisissez votre adresse email 
+                </strong>
+                <input type="text" value="" name="EmailAddressLitReg" maxlength="100" id="EmailAddressLitReg"/>    
+                
+            </label>
+        
+            <div class="litRegBtn">
+                <a id="litRegAction" class="btn styleE fnt27" onclick="return LiteRegSubmitFce(this);">Envoyez-moi des offres par email</a>
+            </div>
+            
+            <label id="privacyCheckBox" class="litRegPrivacy fnt1">
+                <input type="checkbox" name="PrivacyLitReg" id="PrivacyLitReg" checked='checked' />
+                J'ai lu et j'accepte les <a title="conditions d'utilisation" target="_blank" href="http://mon.monster.fr/Terms/Default.aspx">conditions d'utilisation</a> de Monster, sa <a title="politique de confidentialité" target="_blank" href="http://mon.monster.fr/Privacy/Default.aspx">politique de confidentialité</a> et son <a title="utilisation des cookies" target="_blank" href="http://donnees.monster.fr/cookie-info/inside2.aspx">utilisation des cookies</a>.
+            </label>
+        </fieldset>
+    </div>
+</div>
+
+
+</div>
+
+<link href="http://css-seeker.newjobs.com/r/FRFR/v4.1.2.2829/jobviewapply/LiteRegPopUp_css.axd" rel="stylesheet" type="text/css" />
+<script src="http://js-seeker.newjobs.com/r/FRFR/v4.1.2.2453/jobview/s.jobview.LiteRegPopUp_js.axd" type="text/javascript"></script>
+
+
+
+<div id="lrPopup" style="display: none;">
+    <div id="lrpContent" role="dialog" aria-describedby="lrpHeading" aria-hidden="true">        
+        
+        <div class="lrpHeader">
+            <a id="lrpClose" onclick="_s.jobview.LiteRegPopUp.lrpClose();" title="Fermer"></a>
+            <h2 id="lrpHeading" class="fnt12 heading">Laissez les offres venir à vous</h2>
+        </div>
+        
+        <p class="fnt11 subheading">Saisissez votre adresse email ci-dessous pour recevoir des offres similaires par email.</p>
+        <fieldset>
+            <strong class="fnt5">Envoyer des offres similaires à</strong>
+            <p class="fnt11"><span id="ctl00_lblCriteria" title="TECHNICIEN SUPPORT APPLICATIF PROGICIEL DE GESTION - SQL-SERVER (H/F)">TECHNICIEN SUPPORT APPLICATIF ...</span></p>
+
+            <label class="litReg formGS">
+                <strong class="fnt5 ">
+                    Adresse email
+                </strong>
+                <input type="text" value="" name="lrpEmailAddressValue" maxlength="100" id="lrpEmailAddressValue"/>
+                
+            </label>
+        
+            <label id="ctl00_privacyCheckBox" class="fnt1 formGS">
+                <input type="checkbox" name="lrpPrivacy" id="lrpPrivacy" checked='checked' />
+                J'ai lu et j'accepte les <a title="conditions d'utilisation" target="_blank" href="http://mon.monster.fr/Terms/Default.aspx">conditions d'utilisation</a> de Monster, sa <a title="politique de confidentialité" target="_blank" href="http://mon.monster.fr/Privacy/Default.aspx">politique de confidentialité</a> et son <a title="utilisation des cookies" target="_blank" href="http://donnees.monster.fr/cookie-info/inside2.aspx">utilisation des cookies</a>.
+            </label>
+
+            <div class="litRegBtn">
+                <input type="button" id="lrpAction" class="btn styleE fnt27" onclick="_s.jobview.LiteRegPopUp.lrpSaveLiteRegEmailMe(); return false;" value="Envoyez-moi des offres par email" />
+            </div>
+        </fieldset>
+        
+        
+    </div>
+
+    <div id="lrpOverlay"></div>
+
+    <script type="text/javascript">
+        addMonsterReady(function () {
+        _s.jobview.LiteRegPopUp.lrpInitEvents("Intéressé par des offres similaires par email ? Restez sur cette page.", 2);
+                });
+    </script>
+</div>
+
+
+<div class="simplemodal-overlay" id="simplemodal-overlay"></div>
+<div id="jv-modal-content" style="display: none;">
+	<form id="jv-modal-form" method="post" action="GetJob.aspx">
+    <div id="jv-modal-inner">
+        <a id="jvsmClose" class="smClose closeButton" href="#" title="Fermer"></a>
+        <div class="jvmHeader">
+            <b>Merci de votre intérêt pour le poste de TECHNICIEN SUPPORT APPLICATIF PROGICIEL DE GESTION - SQL-SERVER (H/F).</b><br />Bien qu'optionnelles, nous vous recommandons de renseigner les informations demandées ci-dessous. En complétant ces informations, vous acceptez que Monster, ainsi que les sites de son réseau ou partenaires vous contactent au sujet de cette offre ou d'offres similaires, du site Monster et des informations liées à la carrière. Vous consentez également à ce que Monster fournisse votre adresse email au recruteur/à l'employeur qui a publié cette offre, qui pourra vous contacter directement au sujet de votre candidature, même si vous ne la terminez pas.<br /><br />Nous allons sauvegarder une entrée pour cette candidature.
+        </div>
+        <div id="onlyEmail">
+            <div class="outerFieldWrapper">
+                <label class="fieldWrapper GSgd04 cssMarginRight14">
+                    <strong><span id="MONSMessage8">Email</span></strong><br />
+                    <input type="text" name="modemail-1" id="modemail-1" maxlength="100" value="" />
+                    <span class="fnt21"><span id="MONSMessage1">Adresse email invalide</span></span>
+                </label>
+                <br />
+            </div>
+        </div>
+        <div id="fullCollect" class="floatLeft">
+            <div class="outerFieldWrapper">
+                <label class="fieldWrapper GSgd04 cssMarginRight14">
+                    <strong><span id="MONSMessage7">Prénom</span></strong><br />
+                    <input type="text" name="first-name" id="first-name" maxlength="100" value="" />
+                </label>
+                <label class="fieldWrapper GSgd04 cssMarginRight0">
+                    <strong><span id="MONSMessage6">Nom</span></strong><br />
+                    <input type="text" name="last-name" id="last-name" maxlength="100" value="" />
+                </label>
+                <br />
+            </div>
+            <div class="outerFieldWrapper">
+                <label class="fieldWrapper GSgd04 cssMarginRight14">
+                    <strong><span id="MONSMessage4">Email</span></strong><br />
+                    <input type="text" name="modemail-2" id="modemail-2" maxlength="100" value="" />
+                    <span class="fnt21"><span id="MONSMessage9">Adresse email invalide</span></span>
+                </label>
+                <label class="fieldWrapper GSgd04 cssMarginRight0">
+                    <strong><span id="MONSMessage5">Téléphone</span></strong><br />
+                    <input type="text" name="phone" id="phone" maxlength="100" value="" />
+                </label>
+                <br />
+            </div>
+        </div>
+        <a class="smClose" href="#" id="modalClose">Poursuivre la candidature</a><br />
+        <div class="jvmFooter">
+            En continuant votre candidature, vous acceptez l'utilisation des Cookies de Monster ainsi que ses <a target="_blank" href="http://mon.monster.fr/Terms/Default.aspx">Conditions d'utilisation</a> et sa <a target="_blank" href="http://mon.monster.fr/Privacy/Default.aspx">Politique de confidentialité</a>.
+        </div><br />
+    </div>
+	</form>
+</div>
+
+<!-- DIV for Email Click Tracking. DO NOT DELETE -->
+
+
+<!-- ltlJobBodyContent -->
+<div id="monsterAppliesContentHolder">
+    <div itemscope="" itemtype="http://schema.org/JobPosting" xmlns="">
+      <div id="monsterheader"><img src="http://media.newjobs.com/jobview_standard/images/monster.gif" alt="Monster" width="115" height="19"></div>
+      <div id="outerwrapper">
+        <div id="bodycol"><a name="bodycol"></a><div id="jobheadertop">&#160;</div><div id="jobheader"><img border="0" src="http://media.newjobs.com/CompanyJobPostingLogo/7500896/217340.gif" alt="EVERWIN Logo de l'entreprise" id="companyLogo" class="logo" onerror="removeLogo()"><p id="companyNameHeader" style="display:none">EVERWIN</p>
+            <div id="subicons"><img src="http://media.newjobs.com/jobview_standard/images/pixel.gif" height="1" width="1" alt="" style="margin:0px"></div><div style="clear:both;height:1px">&#160;</div><div id="jobheaderbottom">&#160;</div></div><div id="jobwrappertop2">&#160;</div><div id="jobwrapper">
+            <div id="jobsummary">
+              <div id="jobsummary_content">
+                <h2>Infos clés</h2>
+                <dl>
+                  <dt>Entreprise</dt>
+                  <dd itemprop="hiringOrganization" itemscope="" itemtype="http://schema.org/Organization"><span class="wrappable" itemprop="name">EVERWIN</span></dd>
+                  <dt>Région</dt>
+                  <dd><span class="wrappable" itemprop="jobLocation">Etampes 91150, Ile De France France</span></dd>
+                  <dt>Type de poste</dt>
+                  <dd class="multipledd"><span class="wrappable" itemprop="employmentType">Temps plein</span></dd><dd class="multipleddlast"><span class="wrappable"> CDI</span></dd>
+                  <dt>Expérience</dt>
+                  <dd><span class="wrappable" itemprop="experienceRequirements">2 à 5 ans</span></dd>
+                  <dt>Niveau d'études</dt>
+                  <dd><span class="wrappable" itemprop="educationRequirements">DUT, BTS, Bac + 2</span></dd>
+                  <dt>Niveau de poste min.</dt>
+                  <dd><span class="wrappable" itemprop="qualifications">Junior</span></dd>
+                  <dt>Salaire</dt>
+                  <dd><span class="wrappable" itemprop="baseSalary">20 000,00 - 26 000,00 €  /an<br />participation, mutuelle, tickets restaurant, CE</span></dd>
+                </dl>
+              </div>
+            </div>
+            <div id="jobcopy">
+              <h1 itemprop="title">TECHNICIEN SUPPORT APPLICATIF PROGICIEL DE GESTION - SQL-SERVER (H/F)</h1>
+              <h2>Description du poste</h2>
+              <div id="jobBodyContent" itemprop="description">
+    <span ID='TrackingJobBody' NAME='TrackingJobBody'><P style="margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;margin-left:0cm;  line-height:115%"><SPAN style="text-align: justify; font-family: Calibri, sans-serif; font-size: 11pt; line-height: 115%;">Everwin est une société en croissance  qui associe technologie de haut niveau, esprit de conquête, priorité client,  proximité et simplicité des relations humaines.</SPAN></P><P style="margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;margin-left:0cm;  text-align:justify;line-height:115%"><SPAN style="font-size:11.0pt;line-height:  115%;font-family:&quot;Calibri&quot;,sans-serif">Nous sommes leaders dans les logiciels  de Gestion d’Affaires et de la Relation Client auprès des PME et PMI, plus de  20.000 clients utilisateurs exploitent quotidiennement nos solutions. </SPAN></P><P style="margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;margin-left:0cm;  text-align:justify;line-height:115%"><SPAN style="font-size:11.0pt;line-height:  115%;font-family:&quot;Calibri&quot;,sans-serif">Débutant ou confirmé, vous avez un goût  prononcé pour la technique et vous aimez le contact téléphonique, nous vous  proposons de rejoindre notre pôle Support Client.</SPAN><SPAN style="font-size:  11.0pt;line-height:115%"></SPAN></P><P style="margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;margin-left:0cm;  text-align:justify;line-height:115%"><SPAN style="font-size:11.0pt;line-height:  115%;font-family:&quot;Calibri&quot;,sans-serif">Votre mission consiste à aider nos  clients dans l’utilisation et le paramétrage de notre progiciel, à supporter  techniquement nos consultants. Vous réalisez, en télémaintenance, le  diagnostic, le traitement et la résolution des demandes de nos clients.</SPAN><SPAN style="font-size:11.0pt;line-height:115%"></SPAN></P><P style="margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;margin-left:0cm;  text-align:justify;line-height:115%"><SPAN style="font-size:11.0pt;line-height:  115%;font-family:&quot;Calibri&quot;,sans-serif">Vous disposez de puissants outils (CRM,  prise en main à distance, base de connaissances, portail clients...) pour  réaliser vos interventions.</SPAN><SPAN style="font-size:11.0pt;line-height:  115%"></SPAN></P><P style="margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;margin-left:0cm;  text-align:justify;line-height:115%"><SPAN style="font-size:11.0pt;line-height:  115%;font-family:&quot;Calibri&quot;,sans-serif">Vous réalisez les paramétrages SQL de  notre progiciel ainsi que la mise en œuvre de notre module décisionnel. Vous  participez ponctuellement à des missions de développement, à l’alimentation de  notre base de connaissance (bonnes pratiques, trucs et astuces, procédures…).</SPAN><SPAN style="font-size:11.0pt;line-height:115%"></SPAN></P><P style="margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;margin-left:0cm;  text-align:justify;line-height:115%"><SPAN style="font-size:11.0pt;line-height:  115%;font-family:&quot;Calibri&quot;,sans-serif">A terme, l’expérience que vous aurez  acquise à ce poste, vous ouvre des perspectives pour rejoindre notre équipe  Recherche et Développement ou Consulting.</SPAN></P><P style="margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;margin-left:0cm;  text-align:justify;line-height:115%"><SPAN style="font-size:11.0pt;line-height:  115%;font-family:&quot;Calibri&quot;,sans-serif">De formation BAC+3, débutant ou  disposant d’une première expérience à un poste de support ou de développeur,  vous souhaitez développer vos compétences techniques. Vous avez au minimum la  connaissance du langage SQL, une compétence en gestion/comptabilité serait  appréciée.</SPAN><SPAN style="font-size:11.0pt;line-height:115%"></SPAN></P></span>
+  <img src="http://media.newjobs.com/jobview_standard/images/pixel.gif" height="1" width="1" alt="" style="margin:0px"></div>
+              <div style="margin-top:10px"><script src="http://leadgenservice.monster.com/ScriptHandler.ashx?PositionAdID=150591500&ChannelAlias=FRFR&CompanyID=7500896&Placeholder=JobView&VerifyEnabledForJobView=true" type="text/javascript"></script></div>
+            </div>
+          </div><div id="bodycolbottom">&#160;</div><div id="yahooAdsBottom" style="display:none"></div>
+        </div>
+        <div id="sidecol"><a name="sidecol"></a><div class="apply"><a mns_rt="Apply" title="Postuler" onclick="openPanel('MASQUER&#xA;');">Postuler</a></div>
+          <div class="sidecolbox" id="jobtools">
+            <h2>Outils</h2>
+            <ul>
+              <li class="followprofile"><a href="javascript:followCompany();" title="Ajouter l'entreprise à mes favoris" class="followtooltext">Ajouter l'entreprise à mes favoris</a><div>Vos informations peuvent être partagées avec l'entreprise.</div>
+              </li>
+              <li class="followingprofile"><a href="#" title="Entreprise favorite">Entreprise favorite</a></li>
+              <li class="print"><a href="javascript:window.print()" mns_rt="Print" title="Imprimer">Imprimer</a></li>
+              <li class="save"><a href="http://offre-emploi.monster.fr/TECHNICIEN-SUPPORT-APPLICATIF-PROGICIEL-DE-GESTION-SQL-SERVER-H-F-offre-emploi-etampes-Ile-de-France-France-150591500.aspx?ac=add&jobid=150591500" mns_rt="SaveToFile" title="Sauvegarder l'offre" itemprop="url">Sauvegarder l'offre</a></li>
+              <li class="share"><a href="&#xA;    http://offres.monster.fr/emailfriend.aspx?JobID=150591500&JobLocation=Etampes%2c+IDF+91150&JobTitle=TECHNICIEN+SUPPORT+APPLICATIF+PROGICIEL+DE+GESTION+-+SQL-SERVER+(H%2fF)&CompanyName=EVERWIN&redirect=http%3a%2f%2foffres.monster.fr%2f&#xA;  " mns_rt="EmailFriend" title="Envoyer par email" itemprop="url">Envoyer par email</a></li>
+              <li class="addthis"><script language="Javascript">var addthis_config = { services_compact: '', services_exclude: 'email, googlebuzz', ui_language: 'fr'};  var addthis_share = { url: 'http%3a%2f%2foffre-emploi.monster.fr%2f%2fTECHNICIEN-SUPPORT-APPLICATIF-PROGICIEL-DE-GESTION-SQL-SERVER-H-F-offre-emploi-etampes-Ile-de-France-150591500.aspx%3fjobPosition%3d1'}</script><a class="addthis_button" href="http://www.addthis.com/bookmark.php?v=250&username=jobsdotcom" title="Partager">Partager</a><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=jobsdotcom"></script></li>
+              <li class="CommunityPolicingReportContainer last"><span class="CommunityPolicingReportContainer"><a href="#" title="Signaler cette offre">Signaler cette offre</a></span></li>
+            </ul>
+          </div>
+          <div class="sidecolbox" id="companytools">
+            <h2>Plus d'offres</h2>
+            <ul>
+              <li id="allCompanyJobs"><a href="http://offres.monster.fr/PowerSearch.aspx?re=106&co=xwmfpsoftfrx&ah=http%3a%2f%2fprofils.monster.fr%2fwmfpsoftfr&aj=EVERWIN&cn=EVERWIN&re=3101" mns_rt="Jobs" title="Toutes les offres EVERWIN" itemprop="url">Toutes les offres EVERWIN</a></li>
+              <li id="similarJobs"><a href="http://offres.monster.fr/PowerSearch.aspx?cy=fr&occ=86&where=etampes,Ile%20de%20France&zip=91150&re=3104" title="Voir des offres similaires à TECHNICIEN SUPPORT APPLICATIF PROGICIEL DE GESTION - SQL-SERVER (H/F)" itemprop="url">Voir des offres similaires</a></li>
+              <li id="moreLocationsJobs"><a href="http://offres.monster.fr/PowerSearch.aspx?cy=fr&where=etampes,Ile%20de%20France&re=3105" title="Toutes les offres etampes, IDF" itemprop="url">Toutes les offres etampes, IDF</a></li>
+              <li id="browseAllJobs" class="last"><a href="http://offres.monster.fr/Browse.aspx?re=3107" title="Parcourir les offres" itemprop="url">Parcourir les offres</a></li>
+            </ul>
+          </div>
+          <div id="yahooAdsRightCol" style="display:none"></div>
+        </div>
+      </div>
+    </div>
+    <p /><p /></div>
+<form id="forApply"><input type="hidden" id="atp" name="atp" value="3"><input type="hidden" id="cstrd" name="cstrd" value="0"><input type="hidden" id="jobCategory" name="jobCategory" value="660"><input type="hidden" id="jobOccupation" name="jobOccupation" value="660.11774,660.11787"><input type="hidden" id="jobTitle" name="jobTitle" value="TECHNICIEN SUPPORT APPLICATIF PROGICIEL DE GESTION - SQL-SERVER (H/F), EVERWIN, Etampes 91150, Ile De France France"><input type="hidden" id="jobPosition" name="jobPosition" value="TECHNICIEN SUPPORT APPLICATIF PROGICIEL DE GESTION - SQL-SERVER (H/F)"><input type="hidden" id="jobLocation" name="jobLocation" value="Etampes 91150, Ile De France France"><input type="hidden" id="jobCompany" name="jobCompany" value="EVERWIN"><input type="hidden" id="jobID" name="jobID" value="150591500"><input type="hidden" id="jobCountryID" name="jobCountryID" value="0"><input type="hidden" id="linkBack" name="linkBack" value="http%3a%2f%2foffres.monster.fr%2f"><input type="hidden" id="applyUrl" name="applyUrl" value="http%3a%2f%2fmon.monster.fr%2fapplyStart.asp%3fjobid%3d150591500%26redirect%3dhttp%253a%252f%252foffres.monster.fr%252frechercher%252fInformatique-Technologies_4"><input type="hidden" id="jobCountry" name="jobCountry" value=""><input type="hidden" id="jobRefCode" name="jobRefCode" value=""><input type="hidden" id="jobBoardID" name="jobBoardID" value=""><input type="hidden" id="reuID" name="reuID" value=""><input type="hidden" id="disclaimerID" name="disclaimerID" value=""><input type="hidden" id="caurlID" name="caurlID" value="">
+</form>
+<div id="monsterAppliesPageWrapperWhiteSpace"></div></div>
+<!-- ucFooter-->
+
+
+<script type="text/javascript">
+  //<![CDATA[
+
+    function AddHandlerToTemplateApply() {
+        var col = $('#monsterAppliesContentHolder a, #monsterAppliesContentHolder area, #monsterAppliesContentHolder button');
+        AddCoverEventToLinks(col.filter('[id="ContactEmailLink"]'));
+        AddCoverEventToLinks(col.filter('[mns_rt="Apply"]'));
+        AddCoverEventToLinks(col.filter(function (index) {
+            lnk = $(this).attr("href");
+            if (lnk == null || lnk == undefined) return false;
+            lnk = lnk.toLowerCase();
+            applyLnk = MONS_LOG_VARS.ApplyOnlineUrl.toLowerCase();
+            return ((lnk == applyLnk) || (lnk == applyLnk + '/'));
+        }));
+
+        
+        $('[mns_rt=ExpressApplyStart]').live('click', function (e) {
+            if (!$(this).hasClass('applyButtonTextStyle')) {
+                startApply();
+                return false;
+            }
+        });
+        
+    }
+
+    function AddCoverEventToLinks(links) {
+        links.attr('mns_rt', 'ExpressApplyStart');
+        links.filter("a, area").attr('href', '#');
+        links.filter("a, button").removeAttr('onclick');
+        links.removeAttr('target');
+    }
+
+    $(document).ready(function () {
+        // IE6 fixes
+        $('#hiddenApplyDiv').css('display', 'none');
+        $('#hiddenApplyDiv').animate({ height: '20px' }, 0, 'swing');
+        AddHandlerToTemplateApply();
+        var qParams = _g.getUrlParams(window.location);
+        if (qParams['autoopen'] == '1')
+            startApply();
+    });
+
+    function startApply() {
+        $('a.applyButtonTextStyle:first').triggerHandler('click');                
+    }
+
+    // for backward compatibility
+    function openPanel() {
+        startApply();
+    }
+  //]]>  
+</script>
+
+<div id="AppliesFooterHolder" class="AppliesFooterHolder">
+    <div id="pnlApply" class="pnlApply">
+        
+        <div class="applyFooterGreen">
+            <div class="applyContent" id="applyContent">
+                <div class="hiddenApplyDiv" id="hiddenApplyDiv">
+                    <div id="monsterTop_left" class="monsterTopLeft"></div>
+                    <div id="modal_heading" class="modalHeading">
+                    </div>
+                    <div id="monsterTop_right" class="monsterTopRight"></div>                   
+                </div>
+            </div>
+        </div>			
+        <div class="applyFooterPurple">
+            <div class="applyfooter-lcap" id="apply_footer_lcap"></div>
+            <div class="applyfooter-bg">
+                <div class="backJobSearchLinFooter">
+                    <a id="ctl01_hlBackButton" title="Retour aux résultats de recherche" mns_rt="returntosearch" href="http://offres.monster.fr/rechercher/Informatique-Technologies_4">
+                        <span class="applyFooterSearchResults">
+                            <span id="searchResults">
+                                <img id="imgArrow" src="http://media.newjobs.com/mm/redux/jobview/apply/left-arrow.png" alt=""/>
+                            </span>&nbsp;&nbsp;Retour aux résultats de recherche
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="applyfooter-rcap" id="apply_footer_rcap"></div>
+        </div>
+        <div id="ctl01_monsterApplyButton" class="monsterApply-button">
+            <div class="applybutton-lcap" id="apply_button_lcap"></div>
+            <div class="applybutton-bg" id="apply_button_bg">
+                <a href="/Apply/Apply.aspx?JobID=150591500" id="ctl01_hlApplyLink" class="applyButtonTextStyle" mns_rt="ExpressApplyStart" onclick="dcsMultiTrack(&#39;DCS.dcsuri&#39;,&#39;/GetJob.aspx_applyclick.evt&#39;); document.cookie = &#39;abc=1&#39;; window.location = &#39;/Apply/Apply.aspx?JobID=150591500&#39;; return false;">POSTULER</a>
+            </div>
+            <div class="applybutton-rcap" id="apply_button_rcap"></div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+var isCommunityPolicingReportEnabled = true;
+var followProfileMode = 0;
+var openReport;
+var timer;
+
+function popReport(strUrl) {
+    openReport = window.open(strUrl,"resume","width=560,height=620,scrollbars=1,resizable=no");
+    openReport.focus();
+}
+
+function polling(){
+    if (openReport && openReport.closed) {
+        clearInterval(timer);
+        timer=null;
+        window.location.reload(true);
+    } 
+}
+
+function getCookie(cookieName) {
+    var name = cookieName + "=";
+    var cookieArray = document.cookie.split(';');
+
+    for(var i=0; i<cookieArray.length; i++) {
+        var cookieData = cookieArray[i];
+        
+        while (cookieData.charAt(0)==' ') 
+            cookieData = cookieData.substring(1);
+            if (cookieData.indexOf(name) != -1) 
+                return cookieData.substring(name.length,cookieData.length);
+    }
+
+    return "";
+}
+
+$(function(){
+
+    var CACHE_BROWSER_INDICATOR = "jv_loadfrombrowsercahce";
+    var loadfromcache = getCookie(CACHE_BROWSER_INDICATOR) == "true";
+    if(loadfromcache)
+        location.reload();
+});
+
+$(document).ready(function() {
+    timer = setInterval(function(){ polling(); },1000);
+    var reportContainer = $(".CommunityPolicingReportContainer");
+    if(reportContainer[0]) {
+        if (isCommunityPolicingReportEnabled) {
+	        reportContainer.show();
+        }
+        else {
+	        reportContainer.hide();
+        }
+    }
+    else {
+        reportContainer = $("#CustomTemplateHeader span.reportabuse");
+        if (isCommunityPolicingReportEnabled) {
+            reportContainer.parent().show();
+        }
+    }
+
+    if (isCommunityPolicingReportEnabled) {
+        reportContainer.each(
+            function(){$(this).click(function(){popReport('http://mon.monster.fr/CommunityPolicing/CommunityFeedback.aspx?jobid=EAAQSrq5JaVw7jHF59V1aK5p3w--'); return false;});}
+        );
+    } else {
+        reportContainer.each(
+            function(){$(this).addClass("disabledLink").unbind("click").parent().unbind("click");}
+         ); 
+    }
+
+    $(document).mousedown(function (event) {
+        trackingContext.run(event);
+    });
+
+    $(document).keydown(function (event) { 
+        if (event.which == 13 && !trackingContext.showEmailModal && liteRegSetup.isEnabled) { 
+            event.stopPropagation(); 
+            event.preventDefault(); 
+            trackingContext.run(event); 
+        } else { 
+            return true; 
+        } 
+    }); 
+
+    $(document).mouseup(function () { 
+        if (!trackingContext.lrFocused && $('#jv-modal-content input:visible:first').length > 0) { 
+            $('#jv-modal-content input:visible:first').focus(); 
+            trackingContext.lrFocused = true; 
+        } 
+    }); 
+
+    liteRegSetup = {"isEnabled":true,"logUrl":"http://offre-emploi.monster.fr/LogLiteReg.ashx?fc=False&positionAdID=150591500&email=[[EMAIL]]&phone=[[PHONE]]&fn=[[FN]]&ln=[[LN]]&ref=http%3a%2f%2foffres.monster.fr%2frechercher%2fInformatique-Technologies_4&tjt=TECHNICIEN SUPPORT APPLICATIF PROGICIEL DE GESTION - SQL-SERVER (H/F)&geo=Etampes%2b91150%252c%2bIle%2bDe%2bFrance%2bFrance%2c20%2c1384371%2c1821632%2c719&cid=54","userLevel":1,"userEmail":"","firstName":"","lastName":"","phone":"","fullCollect":false,"enableCustomApplyTransitionPage":true};
+
+    if (followProfileMode == 1 || followProfileMode == 3)
+    {
+       var container = $(".followprofile");
+       container.show(); 
+
+       $(".followtooltext").mouseover(function() {
+          var offset = $(this).offset();
+
+          $(this).removeClass("followtooltext").addClass("followtooltexthover");
+          $(this).children("span").offset({ top: offset.top + 20, left: offset.left})
+       });
+    }
+    else if (followProfileMode == 2) {
+       var container = $(".followingprofile");
+       container.show(); 
+    }   
+});
+
+function followCompany()
+{
+    if (followProfileMode == 3) {
+        alert("Vous suivez déjà le nombre maximum d'entreprises (20).");
+    }
+    else {
+		window.location ="http://offre-emploi.monster.fr/GetJob.aspx?JobID=150591500&follow=1";
+    }
+}
+
+</script>
+
+
+
+<form name="dontUse" method="post" action="GetJob.aspx?JobID=150591500" id="dontUse">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTk1OTE1NjM4OA9kFhgCAw8PFgIeB1Zpc2libGVnZGQCBA9kFgJmDxYCHwBoZAIKDxYCHwBoZAILD2QWAgIBD2QWAgIGD2QWBAIBDw8WBB4EVGV4dAUhVEVDSE5JQ0lFTiBTVVBQT1JUIEFQUExJQ0FUSUYgLi4uHgdUb29sVGlwBUVURUNITklDSUVOIFNVUFBPUlQgQVBQTElDQVRJRiBQUk9HSUNJRUwgREUgR0VTVElPTiAtIFNRTC1TRVJWRVIgKEgvRilkZAIGDxYCHwBnZAIMD2QWAgIDD2QWBAIEDw8WBB8BBSFURUNITklDSUVOIFNVUFBPUlQgQVBQTElDQVRJRiAuLi4fAgVFVEVDSE5JQ0lFTiBTVVBQT1JUIEFQUExJQ0FUSUYgUFJPR0lDSUVMIERFIEdFU1RJT04gLSBTUUwtU0VSVkVSIChIL0YpZGQCCA8WAh8AZ2QCDQ8WAh8BBfgFPGI+TWVyY2kgZGUgdm90cmUgaW50w6lyw6p0IHBvdXIgbGUgcG9zdGUgZGUgVEVDSE5JQ0lFTiBTVVBQT1JUIEFQUExJQ0FUSUYgUFJPR0lDSUVMIERFIEdFU1RJT04gLSBTUUwtU0VSVkVSIChIL0YpLjwvYj48YnIgLz5CaWVuIHF1J29wdGlvbm5lbGxlcywgbm91cyB2b3VzIHJlY29tbWFuZG9ucyBkZSByZW5zZWlnbmVyIGxlcyBpbmZvcm1hdGlvbnMgZGVtYW5kw6llcyBjaS1kZXNzb3VzLiBFbiBjb21wbMOpdGFudCBjZXMgaW5mb3JtYXRpb25zLCB2b3VzIGFjY2VwdGV6IHF1ZSBNb25zdGVyLCBhaW5zaSBxdWUgbGVzIHNpdGVzIGRlIHNvbiByw6lzZWF1IG91IHBhcnRlbmFpcmVzIHZvdXMgY29udGFjdGVudCBhdSBzdWpldCBkZSBjZXR0ZSBvZmZyZSBvdSBkJ29mZnJlcyBzaW1pbGFpcmVzLCBkdSBzaXRlIE1vbnN0ZXIgZXQgZGVzIGluZm9ybWF0aW9ucyBsacOpZXMgw6AgbGEgY2FycmnDqHJlLiBWb3VzIGNvbnNlbnRleiDDqWdhbGVtZW50IMOgIGNlIHF1ZSBNb25zdGVyIGZvdXJuaXNzZSB2b3RyZSBhZHJlc3NlIGVtYWlsIGF1IHJlY3J1dGV1ci/DoCBsJ2VtcGxveWV1ciBxdWkgYSBwdWJsacOpIGNldHRlIG9mZnJlLCBxdWkgcG91cnJhIHZvdXMgY29udGFjdGVyIGRpcmVjdGVtZW50IGF1IHN1amV0IGRlIHZvdHJlIGNhbmRpZGF0dXJlLCBtw6ptZSBzaSB2b3VzIG5lIGxhIHRlcm1pbmV6IHBhcy48YnIgLz48YnIgLz5Ob3VzIGFsbG9ucyBzYXV2ZWdhcmRlciB1bmUgZW50csOpZSBwb3VyIGNldHRlIGNhbmRpZGF0dXJlLmQCFQ8WAh8BBRlQb3Vyc3VpdnJlIGxhIGNhbmRpZGF0dXJlZAIWDxYCHwEFrwJFbiBjb250aW51YW50IHZvdHJlIGNhbmRpZGF0dXJlLCB2b3VzIGFjY2VwdGV6IGwndXRpbGlzYXRpb24gZGVzIENvb2tpZXMgZGUgTW9uc3RlciBhaW5zaSBxdWUgc2VzIDxhIHRhcmdldD0iX2JsYW5rIiBocmVmPSJodHRwOi8vbW9uLm1vbnN0ZXIuZnIvVGVybXMvRGVmYXVsdC5hc3B4Ij5Db25kaXRpb25zIGQndXRpbGlzYXRpb248L2E+IGV0IHNhIDxhIHRhcmdldD0iX2JsYW5rIiBocmVmPSJodHRwOi8vbW9uLm1vbnN0ZXIuZnIvUHJpdmFjeS9EZWZhdWx0LmFzcHgiPlBvbGl0aXF1ZSBkZSBjb25maWRlbnRpYWxpdMOpPC9hPi5kAhkPZBYCZg9kFgRmDw8WBB8CBSJSZXRvdXIgYXV4IHLDqXN1bHRhdHMgZGUgcmVjaGVyY2hlHgtOYXZpZ2F0ZVVybAU/aHR0cDovL29mZnJlcy5tb25zdGVyLmZyL3JlY2hlcmNoZXIvSW5mb3JtYXRpcXVlLVRlY2hub2xvZ2llc180ZGQCAQ9kFgICAQ8WBh4EaHJlZgUhL0FwcGx5L0FwcGx5LmFzcHg/Sm9iSUQ9MTUwNTkxNTAwHgZtbnNfcnQFEUV4cHJlc3NBcHBseVN0YXJ0HgdvbmNsaWNrBZoBZGNzTXVsdGlUcmFjaygnRENTLmRjc3VyaScsJy9HZXRKb2IuYXNweF9hcHBseWNsaWNrLmV2dCcpOyBkb2N1bWVudC5jb29raWUgPSAnYWJjPTEnOyB3aW5kb3cubG9jYXRpb24gPSAnL0FwcGx5L0FwcGx5LmFzcHg/Sm9iSUQ9MTUwNTkxNTAwJzsgcmV0dXJuIGZhbHNlO2QCHg8PFgIfAGhkZAIgDw8WAh8AaGRkAiEPFgQfAQWJAzwhLS0gQ3JpdGVvIFRhZyAtLT48c2NyaXB0IHR5cGU9J3RleHQvamF2YXNjcmlwdCcgc3JjPSdodHRwOi8vc3RhdGljLmNyaXRlby5uZXQvanMvbGQvbGQuanMnIGFzeW5jPSd0cnVlJz48L3NjcmlwdD4gPHNjcmlwdCB0eXBlPSd0ZXh0L2phdmFzY3JpcHQnPiB3aW5kb3cuY3JpdGVvX3EgPSB3aW5kb3cuY3JpdGVvX3EgfHwgW107IHdpbmRvdy5jcml0ZW9fcS5wdXNoKHsgZXZlbnQ6ICdzZXRBY2NvdW50JywgYWNjb3VudDogMTEwNzV9LCAgeyBldmVudDogJ3NldEN1c3RvbWVySWQnLCBpZDogJyd9LHsgZXZlbnQ6ICdzZXRTaXRlVHlwZScsIHR5cGU6J2QnfXsgZXZlbnQ6ICd2aWV3SXRlbScsIHR5cGU6JzE1MDU5MTUwMCd9fSk7IDwvc2NyaXB0PiA8IS0tIEVuZCBDcml0ZW8gVGFnIC0tPh8AZ2RkE36ce+O03cyZ976nJmgEos0fqR8=" />
+</div>
+
+<script language='javascript'>document.aspnetForm.action='/TECHNICIEN-SUPPORT-APPLICATIF-PROGICIEL-DE-GESTION-SQL-SERVER-H-F-offre-emploi-etampes-Ile-de-France-150591500.aspx?jobPosition=1';</script>
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="4F94BC27" />
+</div>
+<script type="text/javascript" language='javascript'>$('#aspnetForm').action += '&redirect=http%3a%2f%2foffres.monster.fr%2f';</script><script type="text/javascript" language="javascript">var DYNAMIC_S_ACCOUNT='newjobsProdSeekerFR';var DYNAMIC_S_CURRENCYCODE='EUR';</script><script type="text/javascript">//<![CDATA[
+var amc=amc||{};if(!amc.on){amc.on=amc.call=function(){}};
+document.write("<scr"+"ipt type='text/javascript' src='//www.adobetag.com/d1/v2/ZDEtbW9uc3RlcmpvYnMtMTI4ODgtMjMzNy0=/amc.js'></sc"+"ript>");
+document.write("<scr"+"ipt type='text/javascript' src='//www.adobetag.com/d1/v2/ZDEtbmV3am9icy0xMjg4OC0yNTAw/amc.js'></sc"+"ript>");
+//]]>
+_m.ATM.properties={"eVar2":"unrecognized","channel":"120","eVar1":"D=g","prop1":"D=g","eVar4":"0","events.event3":"true","eVar37":"0_0_0","eVar36":"App_Std;App_Eml","prop22":"Junior","eVar28":"Informatique & Technologies","prop23":"DUT, BTS, Bac + 2","eVar30":"Support/Bureautique/Helpdesk;ERP/Progiciels/CRM","eVar33":"Temps plein, CDI","prop25":"2 à 5 ans","eVar31":"Etampes 91150, Ile De France France","eVar32":"20 000,00 - 26 000,00 €  /an\u003cbr /\u003eparticipation, mutuelle, tickets restaurant, CE","eVar25":"150591500_TECHNICIEN SUPPORT APPLICATIF PROGICIEL DE GESTION - SQL-SERVER (H/F) - Offre d\u0027emploi -  Etampes 91150, Ile De France France","eVar27":"5332","eVar26":"xwmfpsoftfrx_EVERWIN","eVar35":"7500896","events.event30":"true"};_m.ATM.pageName='desktop|frfr|jobview|/getjob.aspx';_m.ATM.version=0;_m.ATM.appID='jobview';_m.ATM.channelID=120;_m.ATM.countryID=54;_m.ATM.appConfig={version:'0',appID:'jobview',channelID:'120',countryID:'54'};_m.ATM.runOnLoad=true;
+(function () {if (typeof addMonsterReady != 'undefined') {addMonsterReady(_m.ATM.initFromOnReady);} else {$(document).ready(_m.ATM.initFromOnReady);}})();</script></form>
+<!-- ltlFooterContent -->
+<!--JT ID: 5332--><script src="http://media.newjobs.com/js/wt/dcsvoahf510000wokl4o4y6l5_6w6o.js" TYPE="text/javascript"></script><img height="1" width="1" src="http://switch.atdmt.com/action/monsef_jobviews_10/v3/10.5.199.241-3404830928.30446132/NULL" alt="" />
+<img width="1" height="1" src="http://aimfar.solution.weborama.fr/fcgi-bin/adprofil.fcgi?k=monsterview&v=0&r=max" alt="" /> 
+<img src="http://aimfar.solution.weborama.fr/fcgi-bin/tracking.fcgi?idcli=4&adv=2817" width="1" height="1" alt="" />
+<script src="http://ad.himediadx.com/seg?add=191501&t=1" type="text/javascript"></script><img width="1" height="1" src="http://aimfar.solution.weborama.fr/fcgi-bin/adprofil.fcgi?k=monster&v=0&r=max"><img width="1" height="1" src="http://aimfar.solution.weborama.fr/fcgi-bin/adprofil.fcgi?k=monster&v=1&r=max">
+<img src='http://aimfar.solution.weborama.fr/fcgi-bin/tracking.fcgi?idcli=4&camp=4786&adv=407' width='1' height='1'><script language="javascript" type="text/javascript">function _eStat_Whap_loaded_func() { 
+	eStatWhap.serial("800000207097");
+	eStatWhap.send();
+}
+(function() { var myscript = document.createElement('script'); myscript.src = "//w.estat.com/js/whap.js";
+	myscript.setAttribute('async', 'true'); var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(myscript, s);
+} )();
+</script><script>document.write('<s'+'cript language="JavaScript" src="http://jact.atdmt.com/jaction/monsef_jobviews_11"></s'+'cript>')</script><noscript><iframe src="http://iact.atdmt.com/iaction/monsef_jobviews_11" width="1" height="1" frameborder="0" scrolling="No" marginheight="0" marginwidth="0" topmargin="0" leftmargin="0"></iframe></noscript><script type="text/javascript" src="//static.criteo.net/js/ld/ld.js" async="true"></script>
+<script type="text/javascript">
+window.criteo_q = window.criteo_q || [];
+window.criteo_q.push(  
+        { event: "setAccount", account: 873 },
+        { event: "setCustomerId", id: "" },
+        { event: "setSiteType", type: "d" },
+        { event: "viewItem", item: "150591500" }
+);
+</script><img src="http://at.amgdgt.com/ads/?t=pp&px=26016&rnd=55813c81
+" width="1" height="1" border="0"/>
+<!-- Google Code for Remarketing tag -->
+<!-- Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. For instructions on adding this tag and more information on the above requirements, read the setup guide: google.com/ads/remarketingsetup -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 1061897233;
+var google_conversion_label = "EICNCOPzugMQkYit-gM";
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1061897233/?value=0&amp;label=EICNCOPzugMQkYit-gM&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript><div style="display:none;"></div></body>
+</html>
+
+
+
+<!-- Criteo Tag --><script type='text/javascript' src='http://static.criteo.net/js/ld/ld.js' async='true'></script> <script type='text/javascript'> window.criteo_q = window.criteo_q || []; window.criteo_q.push({ event: 'setAccount', account: 11075},  { event: 'setCustomerId', id: ''},{ event: 'setSiteType', type:'d'}{ event: 'viewItem', type:'150591500'}}); </script> <!-- End Criteo Tag -->
+
