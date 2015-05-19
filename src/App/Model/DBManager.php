@@ -49,19 +49,20 @@ class DBManager {
 
     public function insert($input){
         $expected = array(
+            'id',
             'title',
             'url',
             'date',
             'town',
+            'postalCode',
             'skills',
-            'training',
+            //'training',
             'type',
-            'text',
             'company',
-            'crawler',
-            'technologies',
+            //'crawler',
+            //'technologies',
             'wage',
-            'id'
+            'text'
         );
 
         try {
@@ -90,7 +91,7 @@ class DBManager {
         }
     }
 
-    public function select($what, $from, $where = '', $where_param = array()){
+    public function select($what, $from, $where = '', $extra = '', $params = array()){
 
         try {
             $queryString = 'SELECT ';
@@ -109,11 +110,22 @@ class DBManager {
             if(!empty($where))
                 $queryString.= ' WHERE '.$where;
 
+            $queryString.= ' '.$extra;
+
+            echo $queryString;
+
             $query = $this->db->query($queryString);
-            foreach($where_param as $param => $value){
+            foreach($params as $param => $value){
                 $query->bindParam(':'.$param, $value);
             }
             $query->execute();
+
+            $output = array();
+            if($result = $query->fetch(\PDO::FETCH_ASSOC)){
+                $output[] = $result;
+            }
+
+            return $output;
 
         }catch(\Exception $e){
             $this->logError('select', $e);

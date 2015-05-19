@@ -9,6 +9,8 @@ class ApecScrapper extends JobScrapper {
 
     public function __construct()
     {
+        $this->imScrapper('apec');
+
         $this->editRegex('title', "#<title>([\s\S]+?) - Offre d'emploi#");
         $this->editRegex('url', "");
         $this->editRegex('date', "#<th>Date de publication :</th>[\r\n\t ]*?<td>([0-9]{2})/([0-9]{2})/([0-9]{4})</td>#");

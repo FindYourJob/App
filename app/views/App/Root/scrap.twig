@@ -1,5 +1,7 @@
 {% extends "/layout.twig" %}
 
-{% for key,value in content %}
-    {{ value.result }}
-{% endfor %}
+{% block content %}
+    {% for key,value in content %}
+        {{ key }} = {{ value.result[1] }}<br/>
+    {% endfor %}
+{% endblock %}

@@ -34,4 +34,12 @@ class RootController extends Controller
         $DB = DBManager::getInstance();
         return $this->render('connect');
     }
+
+    public function getJobAdvertsAction($limit)
+    {
+        $DB = DBManager::getInstance();
+        $result = $DB->select(array('*'), 'jobs', '');
+        var_dump($result);
+        return $this->render('jsonResponse', array('json' => json_encode($result)));
+    }
 }
