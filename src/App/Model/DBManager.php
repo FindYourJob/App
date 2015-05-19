@@ -112,8 +112,6 @@ class DBManager {
 
             $queryString.= ' '.$extra;
 
-            echo $queryString;
-
             $query = $this->db->query($queryString);
             foreach($params as $param => $value){
                 $query->bindParam(':'.$param, $value);
