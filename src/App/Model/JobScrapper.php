@@ -16,7 +16,6 @@ abstract class JobScrapper {
         'company'        => array('regex' => '', 'result' => '', 'compulsory' => false),
         'technologies'   => array('regex' => '', 'result' => '', 'compulsory' => false),
         'wage'           => array('regex' => '', 'result' => '', 'compulsory' => false),
-        'id'             => array('regex' => '', 'result' => '', 'compulsory' => true),
         'crawler'        => array('regex' => '', 'result' => '', 'compulsory' => true)
     );
 
