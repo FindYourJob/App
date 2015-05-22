@@ -91,30 +91,14 @@ class DBManager {
         }
     }
 
-    public function select($what, $from, $where = '', $extra = '', $params = array()){
+    public function select($queryString, $params = array()){
 
         try {
-            $queryString = 'SELECT ';
 
-            if(empty($what) || empty($from))
-                throw new \RuntimeException('DBManager: select: $what and $from must not be empty');
-
-            foreach($what as $attr){
-                if($what[0] != $attr)
-                    $queryString.= ', ';
-                $queryString.= $attr;
-            }
-
-            $queryString.=' FROM '.$from;
-
-            if(!empty($where))
-                $queryString.= ' WHERE '.$where;
-
-            $queryString.= ' '.$extra;
-
-            $query = $this->db->query($queryString);
+            $query = $this->db->prepare($queryString);
+            if(!empty($params))
             foreach($params as $param => $value){
-                $query->bindParam(':'.$param, $value);
+                $query->bindParam($param, $value);
             }
             $query->execute();
 

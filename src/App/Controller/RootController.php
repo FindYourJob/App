@@ -38,7 +38,7 @@ class RootController extends Controller
     public function getJobAdvertsAction($limit)
     {
         $DB = DBManager::getInstance();
-        $result = $DB->select(array('*'), 'jobs', '');
+        $result = $DB->select('SELECT * FROM jobs LIMIT :limit', array(':limit' => $limit));
         return $this->render('jsonResponse', array('json' => json_encode($result)));
     }
 }
