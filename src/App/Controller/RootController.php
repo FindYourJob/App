@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use App\Model\Apec\ApecScrapper;
 use App\Model\DBManager;
+use App\Model\Monster\MonsterCrawler;
 use Base\Controller\Controller;
 use App\Model\CrawlerModel;
 
@@ -15,9 +16,9 @@ class RootController extends Controller
 
     public function crawlAction()
     {
-        $crawler  = new CrawlerModel();
-        $content = $crawler->crawl('https://cadres.apec.fr/MesOffres/RechercheOffres/ApecRechercheOffre.jsp?keywords=informatique');
-        return $this->render('crawl', array('content' => $content));
+        $crawler  = new MonsterCrawler();
+        $crawler->crawl('http://offres.monster.fr/rechercher/Informatique-Technologies_4?pg=1');
+        return $this->render('crawl', array('content' => ''));
     }
 
     public function scrapAction()

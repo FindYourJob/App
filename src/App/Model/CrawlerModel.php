@@ -3,7 +3,7 @@ namespace App\Model;
 
 class CrawlerModel
 {
-    public function crawl($url)
+    public static function crawl($url)
     {
         // is cURL installed yet?
         if (!function_exists('curl_init')){
@@ -19,7 +19,7 @@ class CrawlerModel
             CURLOPT_URL => $url,
             CURLOPT_USERAGENT => 'Mozilla',
             CURLOPT_SSL_VERIFYPEER => false,
-            CURLOPT_PROXY => 'proxyweb.utc.fr:3128'
+            //CURLOPT_PROXY => 'proxyweb.utc.fr:3128'
         ));
 
         // Send the request & save response to $resp

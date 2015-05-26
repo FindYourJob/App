@@ -49,13 +49,12 @@ class DBManager {
 
     public function insert($input){
         $expected = array(
-            'id',
             'title',
             'url',
             'date',
             'town',
             'postalCode',
-            'skills',
+            //'skills',
             //'training',
             'type',
             'company',
@@ -65,24 +64,28 @@ class DBManager {
             'text'
         );
 
+        var_dump($input);
+
         try {
-            $queryString = 'INSERT INTO mytable VALUES (';
+            $queryString = 'INSERT INTO jobs VALUES ("", ';
 
             foreach($expected as $attr){
-                if (!isset($input[$attr])) {
+                //if (isset($input[$attr])) {
                     if($expected[0] != $attr)
                         $queryString.= ', ';
                     $queryString.= ':'.$attr;
-                }else{
-                    throw \RuntimeException('DBManager: insert: Expected field \'' . $attr . '\' before insertion');
-                }
+                //}else{
+                //    throw new \RuntimeException('DBManager: insert: Expected field \'' . $attr . '\' before insertion');
+                //}
             }
 
             $queryString.=');';
 
-            $query = $this->db->query($queryString);
+            echo 'queryStr:'.$queryString;
+
+            $query = $this->db->prepare($queryString);
             foreach($expected as $attr){
-                $query->bindParam(':'.$attr, $input[$attr]);
+                $query->bindParam(':'.$attr, $input[$attr]['result']);
             }
             $query->execute();
 

@@ -5,33 +5,20 @@ namespace App\Model;
 abstract class JobScrapper {
     //Extracted attributes
     protected $jobAttributes = array(
-        'title'          => array('regex' => '', 'result' => '', 'compulsory' => true),
-        'url'            => array('regex' => '', 'result' => '', 'compulsory' => true),
-        'date'           => array('regex' => '', 'result' => '', 'compulsory' => true),
+        'title'          => array('regex' => '', 'result' => '', 'compulsory' => false),
+        'url'            => array('regex' => '', 'result' => '', 'compulsory' => false),
+        'date'           => array('regex' => '', 'result' => '', 'compulsory' => false),
         'town'           => array('regex' => '', 'result' => '', 'compulsory' => false),
         'skills'         => array('regex' => '', 'result' => '', 'compulsory' => false),
         'training'       => array('regex' => '', 'result' => '', 'compulsory' => false),
         'type'           => array('regex' => '', 'result' => '', 'compulsory' => false),
-        'text'           => array('regex' => '', 'result' => '', 'compulsory' => true),
+        'text'           => array('regex' => '', 'result' => '', 'compulsory' => false),
         'company'        => array('regex' => '', 'result' => '', 'compulsory' => false),
         'technologies'   => array('regex' => '', 'result' => '', 'compulsory' => false),
         'wage'           => array('regex' => '', 'result' => '', 'compulsory' => false),
-        'crawler'        => array('regex' => '', 'result' => '', 'compulsory' => true)
-        'title'          => array('regex' => '', 'result' => ''),
-        'url'            => array('regex' => '', 'result' => ''),
-        'date'           => array('regex' => '', 'result' => ''),
-        'town'           => array('regex' => '', 'result' => ''),
-        'skills'         => array('regex' => '', 'result' => ''),
-        'training'       => array('regex' => '', 'result' => ''),
-        'type'           => array('regex' => '', 'result' => ''),
-        'text'           => array('regex' => '', 'result' => ''),
-        'company'        => array('regex' => '', 'result' => ''),
-        'crawler'        => array('regex' => '', 'result' => ''),
-        'technologies'   => array('regex' => '', 'result' => ''),
-        'wage'           => array('regex' => '', 'result' => ''),
-        'id'             => array('regex' => '', 'result' => ''),
+        'crawler'        => array('regex' => '', 'result' => '', 'compulsory' => false),
+        'id'             => array('regex' => '', 'result' => '', 'compulsory' => false),
     );
-
 
     public function scrap($input){
         $this->clearAttributes();
@@ -56,7 +43,7 @@ abstract class JobScrapper {
                 if(empty($this->jobAttributes[$attr]['result'])){
                     $returnCode = false;
                 }else{
-                    unset($this->jobAttributes[$attr]['result'][0]);
+                    $this->jobAttributes[$attr]['result'] = $this->jobAttributes[$attr]['result'][1];
                 }
             }
         }
@@ -81,5 +68,4 @@ abstract class JobScrapper {
     protected function imScrapper($name){
         $this->jobAttributes['crawler']['result'] = $name;
     }
-}
 }

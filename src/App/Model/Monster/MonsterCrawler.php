@@ -3,7 +3,7 @@
 namespace App\Model\Monster;
 
 use App\Model\CrawlerModel;
-
+use App\Model\DBManager;
 
 
 class MonsterCrawler {
@@ -27,7 +27,7 @@ class MonsterCrawler {
         $var = true;
         $url = $u;
         while($var){
-            $result = $this->crawlAction($url);
+            $result = CrawlerModel::crawl($url);
             if(!preg_match('#<a class=\'box nextLink fnt5\' href=\'(.*)\' rel=\'Suivant\'#', $result, $res)){
                 $var = false;
             }
@@ -36,13 +36,15 @@ class MonsterCrawler {
 	        $element = preg_replace('#href="#', '', $element);
 	        $element = preg_replace('#">#', '', $element);
                 if ( preg_match('#jobPosition#', $element, $t)){
-                   echo $element;
+                   //echo $element;
                    $this->scrap($element);
+                    die();
                 }
             }
             $res = preg_replace('#<a class=\'box nextLink fnt5\' href=\'#', '', $res[0]);
             $res = preg_replace('#\' rel=\'Suivant\'#', '', $res);
             $url = $res;
+            $var = false;
         }
         
     }
@@ -50,6 +52,7 @@ class MonsterCrawler {
    //scrap a specific offer 
     public function scrap($url)
     {
+        echo 'Scrap';
         $result = $this->crawlAction($url);
         //the regex only works for non specific template
         if(preg_match('#<h2>Outils#', $result, $t)){
@@ -67,12 +70,14 @@ class MonsterCrawler {
         $scrapper  = new MonsterScrapper();
         $scrapper->scrap(utf8_encode(file_get_contents($file)));
         $content = $scrapper->getAttributes();
+        echo 'BDD';
+        DBManager::getInstance()->insert($content);
         // To test change path
-        $file = fopen(tempnam("/var/www/html/Back-end/web", "crawl"), 'a');
+        /*$file = fopen(tempnam("/var/www/html/Back-end/web", "crawl"), 'a');
         $content = var_export($content, true );
         fputs($file, $content);
-        fclose($file);
-        die();
+        fclose($file);*/
+        //die();
     }
 }
 
