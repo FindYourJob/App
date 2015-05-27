@@ -6,12 +6,15 @@ use Base\Application;
 
 abstract class Controller
 {
+    /**
+     * @var Application $app
+     */
     protected $app;
 
     /**
      * Set the application class to the controller.
      *
-     * @param Base\Application $app
+     * @param Application $app
      */
     public function setApplication(Application $app)
     {

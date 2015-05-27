@@ -48,6 +48,13 @@ abstract class JobScrapper {
             }
         }
 
+        if(!empty($this->jobAttributes['town']['result'])){
+            $geoloc = DBManager::getInstance()->getGeoloc($this->jobAttributes['town']['result']);
+
+            $this->jobAttributes['long'] = array('result' => $geoloc['long']);
+            $this->jobAttributes['lat'] = array('result' => $geoloc['lat']);
+        }
+
         return $returnCode;
     }
 

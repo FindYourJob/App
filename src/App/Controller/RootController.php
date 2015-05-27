@@ -40,6 +40,13 @@ class RootController extends Controller
     {
         $DB = DBManager::getInstance();
         $result = $DB->select('SELECT * FROM jobs LIMIT :limit', array(':limit' => $limit));
-        return $this->render('jsonResponse', array('json' => json_encode($result)));
+        return $this->app->json($result);
+    }
+
+    public function populateCitiesAction()
+    {
+        $DB = DBManager::getInstance();
+        $DB->populateCities();
+         return $this->render('populate');
     }
 }
