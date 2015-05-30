@@ -118,6 +118,21 @@ class DBManager {
         }
     }
 
+    public function insertTechno($name){
+
+        try {
+
+            $queryString = 'INSERT INTO technos VALUES ("", :name);';
+
+            $query = $this->db->prepare($queryString);
+            $query->bindParam(':name', $name);
+            $query->execute();
+
+        }catch(\Exception $e){
+            $this->logError('insert', $e);
+        }
+    }
+
     public function populateCities(){
         // Augmentation de la time limit
         set_time_limit(800);

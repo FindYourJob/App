@@ -5,6 +5,7 @@ use App\Model\Apec\ApecCrawler;
 use App\Model\Apec\ApecScrapper;
 use App\Model\DBManager;
 use App\Model\Monster\MonsterCrawler;
+use App\Model\StackExchangeAPI;
 use Base\Controller\Controller;
 use App\Model\CrawlerModel;
 
@@ -30,13 +31,20 @@ class RootController extends Controller
     }
 
     public function scrapAction()
-{
-    $scrapper  = new ApecScrapper();
-    $scrapper->scrap(utf8_encode(file_get_contents('./sample.html')));
-    $content = $scrapper->getAttributes();
-    var_dump($content);
-    return $this->render('scrap', array('content' => $content));
-}
+    {
+        $scrapper  = new ApecScrapper();
+        $scrapper->scrap(utf8_encode(file_get_contents('./sample.html')));
+        $content = $scrapper->getAttributes();
+        var_dump($content);
+        return $this->render('scrap', array('content' => $content));
+    }
+
+    public function scrapTechnosAction()
+    {
+        $api = new StackExchangeAPI();
+        $api->getTechnos();
+        return $this->render('okay');
+    }
 
     public function connectAction()
     {
@@ -55,6 +63,6 @@ class RootController extends Controller
     {
         $DB = DBManager::getInstance();
         $DB->populateCities();
-         return $this->render('populate');
+        return $this->render('populate');
     }
 }
