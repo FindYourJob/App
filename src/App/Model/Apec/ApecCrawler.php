@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Model\Monster;
+namespace App\Model\Apec;
 
 use App\Model\CrawlerModel;
 use App\Model\DBManager;
 
 
-class MonsterCrawler {
+class ApecCrawler {
+
     
     // scan all the jobs offer from an url
     public function crawl($u)
@@ -16,16 +17,17 @@ class MonsterCrawler {
         $url = $u;
         while($var){
             $result = CrawlerModel::crawl($url);
-            if(!preg_match('#<a class=\'box nextLink fnt5\' href=\'(.*)\' rel=\'Suivant\'#', $result, $res)){
+            if(!preg_match('#<a href="/offres-emploi-cadres/(.*)"#', $result, $res)){
                 $var = false;
             }
-            preg_match_all('#href=(.*?)>#', $result, $urls);  
+            preg_match_all('#href="/offres-emploi-cadres/(.*?)"#', $result, $urls);
             foreach ($urls[0] as $element){
 	        $element = preg_replace('#href="#', '', $element);
-	        $element = preg_replace('#">#', '', $element);
-                if ( preg_match('#jobPosition#', $element, $t)){
+	        $element = preg_replace('#"#', '', $element);
+                var_dump($element);
+                if ( preg_match('#xtcr#', $element, $t)){
                    //echo $element;
-                   $this->scrap($element);
+                   $this->scrap('https://cadres.apec.fr'.$element);
                     die();
                 }
             }
@@ -40,25 +42,23 @@ class MonsterCrawler {
    //scrap a specific offer 
     public function scrap($url)
     {
-        echo 'Scrap';
-        $result = CrawlerModel::crawl($url);
+        echo 'Scrap<br/>';
+        $result =  CrawlerModel::crawl($url);
+
         //the regex only works for non specific template
-        if(preg_match('#<h2>Outils#', $result, $t)){
-            $fp_fichier = fopen('crawlfile', 'a');
-            fputs($fp_fichier, $result);
-            $this->scrapAction('crawlfile');
-        } else 
-            return;
+        $fp_fichier = fopen('crawlfile', 'a');
+        fputs($fp_fichier, $result);
+        $this->scrapAction('crawlfile');
     } 
 
 
 
     public function scrapAction($file)
     {
-        $scrapper  = new MonsterScrapper();
+        $scrapper  = new ApecScrapper();
         $scrapper->scrap(utf8_encode(file_get_contents($file)));
         $content = $scrapper->getAttributes();
-        echo 'BDD';
+        echo 'BDD<br/>';
         DBManager::getInstance()->insert($content);
         // To test change path
         /*$file = fopen(tempnam("/var/www/html/Back-end/web", "crawl"), 'a');

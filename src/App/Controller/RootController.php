@@ -1,6 +1,7 @@
 <?php
 namespace App\Controller;
 
+use App\Model\Apec\ApecCrawler;
 use App\Model\Apec\ApecScrapper;
 use App\Model\DBManager;
 use App\Model\Monster\MonsterCrawler;
@@ -21,14 +22,21 @@ class RootController extends Controller
         return $this->render('crawl', array('content' => ''));
     }
 
-    public function scrapAction()
+    public function apecCrawlAction()
     {
-        $scrapper  = new ApecScrapper();
-        $scrapper->scrap(utf8_encode(file_get_contents('./sample.html')));
-        $content = $scrapper->getAttributes();
-        var_dump($content);
-        return $this->render('scrap', array('content' => $content));
+        $crawler  = new ApecCrawler();
+        $crawler->crawl('https://cadres.apec.fr/MesOffres/RechercheOffres/ApecRechercheOffre.jsp?keywords=informatique');
+        return $this->render('crawl', array('content' => ''));
     }
+
+    public function scrapAction()
+{
+    $scrapper  = new ApecScrapper();
+    $scrapper->scrap(utf8_encode(file_get_contents('./sample.html')));
+    $content = $scrapper->getAttributes();
+    var_dump($content);
+    return $this->render('scrap', array('content' => $content));
+}
 
     public function connectAction()
     {

@@ -24,6 +24,7 @@ class RootRouter implements RouterInterface
 
         $backend->get('/hello/{name}', 'App\Controller\RootController::helloAction');
         $backend->get('/crawl', 'App\Controller\RootController::crawlAction');
+        $backend->get('/apecCrawl', 'App\Controller\RootController::apecCrawlAction');
         $backend->get('/scrap', 'App\Controller\RootController::scrapAction');
         $backend->get('/connect', 'App\Controller\RootController::connectAction');
         $backend->get('/getJobAdverts/{limit}', 'App\Controller\RootController::getJobAdvertsAction');
