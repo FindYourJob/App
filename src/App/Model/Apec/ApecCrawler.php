@@ -8,38 +8,43 @@ use App\Model\DBManager;
 
 class ApecCrawler {
 
-    
+
     // scan all the jobs offer from an url
     public function crawl($u)
     {
-        
+        $limit = 5;
+        $i = 0;
         $var = true;
         $url = $u;
         while($var){
+            //echo 'URL:'.$url.'<br/>';
             $result = CrawlerModel::crawl($url);
-            if(!preg_match('#<a href="/offres-emploi-cadres/(.*)"#', $result, $res)){
+            if(!preg_match('#<a href="([^"]*?)" class="lastItem">Suivante</a>#', $result, $res)){
                 $var = false;
             }
+            //var_dump($res);
             preg_match_all('#href="/offres-emploi-cadres/(.*?)"#', $result, $urls);
             foreach ($urls[0] as $element){
-	        $element = preg_replace('#href="#', '', $element);
-	        $element = preg_replace('#"#', '', $element);
-                var_dump($element);
+                $element = preg_replace('#href="#', '', $element);
+                $element = preg_replace('#"#', '', $element);
                 if ( preg_match('#xtcr#', $element, $t)){
-                   //echo $element;
-                   $this->scrap('https://cadres.apec.fr'.$element);
-                    die();
+                    //echo $element;
+                    $this->scrap('https://cadres.apec.fr'.$element);
+                    //die();
                 }
             }
-            $res = preg_replace('#<a class=\'box nextLink fnt5\' href=\'#', '', $res[0]);
-            $res = preg_replace('#\' rel=\'Suivant\'#', '', $res);
-            $url = $res;
-            $var = false;
+            $res = preg_replace('#<a href="#', '', $res[0]);
+            $res = preg_replace('#" class="lastItem">Suivante</a>#', '', $res);
+            //echo 'RES:'.$res;
+            $url = 'https://cadres.apec.fr'.$res;
+            ++$i;
+            if($i>$limit)
+                $var = false;
         }
-        
+
     }
 
-   //scrap a specific offer 
+    //scrap a specific offer
     public function scrap($url)
     {
         echo 'Scrap<br/>';
@@ -49,7 +54,7 @@ class ApecCrawler {
         $fp_fichier = fopen('crawlfile', 'a');
         fputs($fp_fichier, $result);
         $this->scrapAction('crawlfile');
-    } 
+    }
 
 
 
