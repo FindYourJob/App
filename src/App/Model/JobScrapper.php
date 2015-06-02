@@ -18,6 +18,7 @@ abstract class JobScrapper {
         'wage'           => array('regex' => '', 'result' => '', 'compulsory' => false),
         'crawler'        => array('regex' => '', 'result' => '', 'compulsory' => false),
         'id'             => array('regex' => '', 'result' => '', 'compulsory' => false),
+        'experience'     => array('regex' => '', 'result' => '', 'compulsory' => false),
     );
 
     public function scrap($input){
@@ -43,7 +44,7 @@ abstract class JobScrapper {
                 if(empty($this->jobAttributes[$attr]['result'])){
                     $returnCode = false;
                 }else{
-                    $this->jobAttributes[$attr]['result'] = $this->jobAttributes[$attr]['result'][1];
+                    $this->jobAttributes[$attr]['result'] = html_entity_decode(strip_tags($this->jobAttributes[$attr]['result'][1]));
                 }
             }
         }
@@ -74,5 +75,9 @@ abstract class JobScrapper {
 
     protected function imScrapper($name){
         $this->jobAttributes['crawler']['result'] = $name;
+    }
+
+    public function setAttr($attr, $val){
+        $this->jobAttributes[$attr]['result'] = $val;
     }
 }
