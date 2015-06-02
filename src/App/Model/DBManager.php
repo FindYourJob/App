@@ -60,9 +60,9 @@ class DBManager {
             'type',
             'company',
             //'crawler',
-            //'technologies',
             'wage',
-            'text'
+            'text',
+            'technos'
         );
 
         var_dump($input);
@@ -86,12 +86,34 @@ class DBManager {
 
             $query = $this->db->prepare($queryString);
             foreach($expected as $attr){
-                $query->bindParam(':'.$attr, $input[$attr]['result']);
+                if($attr != 'technos')
+                    $query->bindParam(':'.$attr, $input[$attr]['result']);
             }
+            $query->bindParam(':technos', json_encode($input['technos']['result']));
             $query->execute();
 
         }catch(\Exception $e){
-            $this->logError('insert', $e);
+            $this->logError('insert job ', $e);
+        }
+
+        $idJob = $this->db->lastInsertId();
+
+        //-- TECHNOS --//
+        try {
+            if(!empty($input['technos']['result']))
+                foreach($input['technos']['result'] as $id => $name) {
+                    $queryString = 'INSERT INTO linkedToTechno VALUES (:idJob, :idTechno, :technoName)';
+
+                    $query = $this->db->prepare($queryString);
+                    $query->bindParam(':idJob', $idJob);
+                    $query->bindParam(':idTechno', $id);
+                    $query->bindParam(':technoName', $name);
+
+                    $query->execute();
+                }
+
+        }catch(\Exception $e){
+            $this->logError('insert techno ', $e);
         }
     }
 
@@ -227,6 +249,21 @@ class DBManager {
         return count($results) > 0 ? $results[0] : null;
     }
 
+    public function generateJson($fields) {
+
+        $str = "CONCAT('[',GROUP_CONCAT(CONCAT('{\"";
+
+        for ($i = 0, $l = count($fields); $i < $l; ++$i) {
+            $str.= $fields[$i] . "\":','\"'," . $fields[$i];
+
+            if ($i != $l - 1) {
+                $str.= ",'\",\"";
+            }
+        }
+        $str.= ",'\"}')),']')";
+        return $str;
+    }
+
     /**
      * Logs errors happening in database context
      * @param string $param
@@ -238,6 +275,7 @@ class DBManager {
         echo 'Param: '.$param;
         throw $exception;
     }
+
 
 }
 

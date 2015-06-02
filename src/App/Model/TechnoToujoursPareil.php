@@ -39,7 +39,7 @@ class TechnoToujoursPareil {
             foreach($words as $v){
                 $v = strtolower($v);
                 if(isset($this->technos[$v]))
-                    $matches[] = array($this->technos[$v] => $v);
+                    $matches[(int) $this->technos[$v]] = $v;
             }
         }
 

@@ -67,10 +67,17 @@ class RootController extends Controller
         return $this->app->json($result);
     }
 
+    public function getJobAdvertsWithTechnosAction($limit)
+    {
+        $DB = DBManager::getInstance();
+        $result = $DB->select('SELECT * FROM jobs WHERE technos != `` LIMIT :limit', array(':limit' => $limit));
+        return $this->app->json($result);
+    }
+
     public function getJobAdvertsLocatedAction($limit)
     {
         $DB = DBManager::getInstance();
-        $result = $DB->select('SELECT * FROM jobs WHERE `long` is not null AND `lat` is not null LIMIT :limit', array(':limit' => $limit));
+        $result = $DB->select("SELECT * FROM jobs WHERE `long` is not null AND `lat` is not null LIMIT :limit", array(':limit' => $limit));
         return $this->app->json($result);
     }
 
@@ -80,4 +87,5 @@ class RootController extends Controller
         $DB->populateCities();
         return $this->render('populate');
     }
+
 }
