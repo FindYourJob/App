@@ -11,7 +11,10 @@ class MonsterCrawler {
     // scan all the jobs offer from an url
     public function crawl($u)
     {
-        
+        $resume_at = 12;
+        $limit = 13;
+        $i = 0;
+
         $var = true;
         $url = $u;
         while($var){
@@ -20,19 +23,20 @@ class MonsterCrawler {
                 $var = false;
             }
             preg_match_all('#href=(.*?)>#', $result, $urls);  
+            if($i >= $resume_at)
             foreach ($urls[0] as $element){
 	        $element = preg_replace('#href="#', '', $element);
 	        $element = preg_replace('#">#', '', $element);
                 if ( preg_match('#jobPosition#', $element, $t)){
-                   //echo $element;
                    $this->scrap($element);
                 }
             }
             $res = preg_replace('#<a class=\'box nextLink fnt5\' href=\'#', '', $res[0]);
             $res = preg_replace('#\' rel=\'Suivant\'#', '', $res);
             $url = $res;
-	    //Just for testing remove after
-            $var = false;
+            ++$i;
+            if($i>=$limit)
+                $var = false;
         }
         
     }
