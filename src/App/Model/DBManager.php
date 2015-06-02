@@ -133,6 +133,27 @@ class DBManager {
         }
     }
 
+    public function getTechnos(){
+
+        $output = array();
+
+        try {
+            $queryString = 'SELECT * FROM technos;';
+            $query = $this->db->prepare($queryString);
+            $query->execute();
+
+            while($r = $query->fetch()){
+                $output[$r['name']] = $r['idTechno'];
+            }
+
+        }catch(\Exception $e){
+            $this->logError('insert', $e);
+        }
+
+        return $output;
+    }
+
+
     public function populateCities(){
         // Augmentation de la time limit
         set_time_limit(800);

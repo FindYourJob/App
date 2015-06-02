@@ -6,6 +6,7 @@ use App\Model\Apec\ApecScrapper;
 use App\Model\DBManager;
 use App\Model\Monster\MonsterCrawler;
 use App\Model\StackExchangeAPI;
+use App\Model\TechnoToujoursPareil;
 use Base\Controller\Controller;
 use App\Model\CrawlerModel;
 
@@ -44,6 +45,13 @@ class RootController extends Controller
         $api = new StackExchangeAPI();
         $api->getTechnos();
         return $this->render('okay');
+    }
+
+    public function getTechnosAction()
+    {
+        $string = "Bonjour j'aime bien le C++ et le javascript";
+        $result = TechnoToujoursPareil::getInstance()->whatTechnosExist($string);
+        return $this->app->json($result);
     }
 
     public function connectAction()
