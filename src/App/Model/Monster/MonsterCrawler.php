@@ -11,7 +11,8 @@ class MonsterCrawler {
     // scan all the jobs offer from an url
     public function crawl($u)
     {
-        
+        $limit = 1;
+        $i = 0;
         $var = true;
         $url = $u;
         while($var){
@@ -24,17 +25,17 @@ class MonsterCrawler {
 	        $element = preg_replace('#href="#', '', $element);
 	        $element = preg_replace('#">#', '', $element);
                 if ( preg_match('#jobPosition#', $element, $t)){
-                   //echo $element;
+                   //cho $element;
                    $this->scrap($element);
-                    die();
                 }
             }
             $res = preg_replace('#<a class=\'box nextLink fnt5\' href=\'#', '', $res[0]);
             $res = preg_replace('#\' rel=\'Suivant\'#', '', $res);
             $url = $res;
-            $var = false;
+            ++$i;
+            if($i>=$limit)
+                $var = false;
         }
-        
     }
 
    //scrap a specific offer 
@@ -44,19 +45,19 @@ class MonsterCrawler {
         $result = CrawlerModel::crawl($url);
         //the regex only works for non specific template
         if(preg_match('#<h2>Outils#', $result, $t)){
-            $fp_fichier = fopen('crawlfile', 'a');
-            fputs($fp_fichier, $result);
-            $this->scrapAction('crawlfile');
+            //$fp_fichier = fopen('crawlfile', 'a');
+            //fputs($fp_fichier, $result);
+            $this->scrapAction($result);
         } else 
             return;
     } 
 
 
 
-    public function scrapAction($file)
+    public function scrapAction($string)
     {
         $scrapper  = new MonsterScrapper();
-        $scrapper->scrap(utf8_encode(file_get_contents($file)));
+        $scrapper->scrap(utf8_encode($string));
         $content = $scrapper->getAttributes();
         echo 'BDD';
         DBManager::getInstance()->insert($content);
