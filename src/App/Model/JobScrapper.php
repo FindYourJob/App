@@ -55,12 +55,12 @@ abstract class JobScrapper {
 
         $this->scrapTechnos();
 
-        /*if(!empty($this->jobAttributes['town']['result'])){
+        if(!empty($this->jobAttributes['town']['result'])){
             $geoloc = DBManager::getInstance()->getGeoloc($this->jobAttributes['town']['result']);
 
             $this->jobAttributes['long'] = array('result' => $geoloc['long']);
             $this->jobAttributes['lat'] = array('result' => $geoloc['lat']);
-        }*/
+        }
         return $returnCode;
     }
 
@@ -87,6 +87,6 @@ abstract class JobScrapper {
     }
     
     protected function scrapTechnos(){
-       // $this->jobAttributes['technos']['result'] = TechnoToujoursPareil::getInstance()->whatTechnosExist($this->jobAttributes['text']['result']);
+       $this->jobAttributes['technos']['result'] = TechnoToujoursPareil::getInstance()->whatTechnosExist($this->jobAttributes['text']['result']);
     }
 }
