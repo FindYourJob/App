@@ -59,6 +59,13 @@ class RootController extends Controller
         return $this->app->json($result);
     }
 
+    public function getJobAdvertsLocatedAction($limit)
+    {
+        $DB = DBManager::getInstance();
+        $result = $DB->select('SELECT * FROM jobs WHERE `long` is not null AND `lat` is not null LIMIT :limit', array(':limit' => $limit));
+        return $this->app->json($result);
+    }
+
     public function populateCitiesAction()
     {
         $DB = DBManager::getInstance();
