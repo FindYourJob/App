@@ -17,10 +17,9 @@ class MonsterScrapper extends JobScrapper {
         $this->editRegex('skills', "");
         $this->editRegex('training', "#educationRequirements\">(.*)</span>#");
         $this->editRegex('type', "#itemprop=\"employmentType\">(.*?)</span></dd><dd#");
-        //$this->editRegex('text', "#NAME='TrackingJobBody'>(.*)[\r\n\t ]*?<img#");
+        $this->editRegex('text', "#NAME='TrackingJobBody'>(.*)[\r\n\t ]*?<img#");
         $this->editRegex('company', "#temprop=\"name\"(.*)(</span>|</p>)#");
         $this->editRegex('crawler', "");
-        $this->editRegex('technologies', "");
         $this->editRegex('wage', "#itemprop=\"baseSalary\">(.+?)</span>#");
         $this->editRegex('id', "");
         $this->editRegex('experience', "#experienceRequirements\">(.*)</span>#");

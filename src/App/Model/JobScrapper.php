@@ -14,7 +14,7 @@ abstract class JobScrapper {
         'type'           => array('regex' => '', 'result' => '', 'compulsory' => false),
         'text'           => array('regex' => '', 'result' => '', 'compulsory' => false),
         'company'        => array('regex' => '', 'result' => '', 'compulsory' => false),
-        'technologies'   => array('regex' => '', 'result' => '', 'compulsory' => false),
+        'technos'        => array('regex' => '', 'result' => '', 'compulsory' => false),
         'wage'           => array('regex' => '', 'result' => '', 'compulsory' => false),
         'crawler'        => array('regex' => '', 'result' => '', 'compulsory' => false),
         'id'             => array('regex' => '', 'result' => '', 'compulsory' => false),
@@ -36,6 +36,9 @@ abstract class JobScrapper {
                 continue;
             }
 
+            if($attr == 'technos')
+                continue;
+
             if(empty($val['regex']) && $val['compulsory']) {
                 $returnCode = false;
             }
@@ -48,6 +51,8 @@ abstract class JobScrapper {
                 }
             }
         }
+
+        $this->scrapTechnos();
 
         if(!empty($this->jobAttributes['town']['result'])){
             $geoloc = DBManager::getInstance()->getGeoloc($this->jobAttributes['town']['result']);
@@ -79,5 +84,8 @@ abstract class JobScrapper {
 
     public function setAttr($attr, $val){
         $this->jobAttributes[$attr]['result'] = $val;
+    
+    protected function scrapTechnos(){
+        $this->jobAttributes['technos']['result'] = TechnoToujoursPareil::getInstance()->whatTechnosExist($this->jobAttributes['text']['result']);
     }
 }

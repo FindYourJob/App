@@ -51,17 +51,15 @@ class ApecCrawler {
         $result =  CrawlerModel::crawl($url);
 
         //the regex only works for non specific template
-        $fp_fichier = fopen('crawlfile', 'a');
-        fputs($fp_fichier, $result);
-        $this->scrapAction('crawlfile');
+        $this->scrapAction($result);
     }
 
 
 
-    public function scrapAction($file)
+    public function scrapAction($string)
     {
         $scrapper  = new ApecScrapper();
-        $scrapper->scrap(utf8_encode(file_get_contents($file)));
+        $scrapper->scrap(utf8_encode($string));
         $content = $scrapper->getAttributes();
         echo 'BDD<br/>';
         DBManager::getInstance()->insert($content);

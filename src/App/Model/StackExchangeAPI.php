@@ -4,7 +4,8 @@ namespace App\Model;
 
 class StackExchangeAPI {
 
-    protected $limit = 70000;
+    //protected $limit = 70000;
+    protected $limit = 3500;
 
     public function getTechnos(){
         $page_number = 1;
@@ -24,8 +25,8 @@ class StackExchangeAPI {
 
             $technos_all = array_merge($technos_all, $technos);
 
-            var_dump($technos_all);
-            var_dump(end($technos)["count"]);
+            //var_dump($technos_all);
+            //var_dump(end($technos)["count"]);
 
             $page_number++;
 
