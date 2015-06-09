@@ -20,7 +20,7 @@ class ApecScrapper extends JobScrapper {
         $this->editRegex('training', "");
         $this->editRegex('type', "");
         $this->editRegex('text', "#<div class=\"boxContentInside\">[\r\n\t ]*?<p>(.+?)</p>#");
-        //$this->editRegex('company', "#<th valign=\"top\">Société :</th>[\r\n\t ]*?<td>[\r\n\t ]*?(?:<img[\s\S]/>[\r\n\t ]*?<br/>)(.+?)<br/>#");
+        $this->editRegex('company', "#<th valign=\"top\">Société :</th>[\r\n\t ]*?<td>[\r\n\t ]*?(?:<img[\s\S]/>[\r\n\t ]*?<br/>)(.+?)<br/>#");
         $this->editRegex('company', "#<th valign=\"top\">Société :</th>[\r\n\t ]*?<td>(?:[\r\n\t ]*?<img[\s\S]*?/>[\r\n\t ]*?<br />)[\r\n\t ]*?([a-zA-Z][\s\S]*?)[\r\n\t ]*?<br />#");
         $this->editRegex('crawler', "");
         $this->editRegex('wage', "#<th>Salaire :</th>[\r\n\t ]*?<td>(.+?)</td>#");

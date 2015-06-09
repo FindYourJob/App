@@ -16,6 +16,7 @@ abstract class JobScrapper {
         'company'        => array('regex' => '', 'result' => '', 'compulsory' => false),
         'technos'        => array('regex' => '', 'result' => '', 'compulsory' => false),
         'wage'           => array('regex' => '', 'result' => '', 'compulsory' => false),
+        'wageMin'        => array('regex' => '', 'result' => '', 'compulsory' => false),
         'crawler'        => array('regex' => '', 'result' => '', 'compulsory' => false),
         'id'             => array('regex' => '', 'result' => '', 'compulsory' => false),
         'experience'     => array('regex' => '', 'result' => '', 'compulsory' => false),
@@ -60,7 +61,6 @@ abstract class JobScrapper {
             $this->jobAttributes['long'] = array('result' => $geoloc['long']);
             $this->jobAttributes['lat'] = array('result' => $geoloc['lat']);
         }
-
         return $returnCode;
     }
 
@@ -87,6 +87,6 @@ abstract class JobScrapper {
     }
     
     protected function scrapTechnos(){
-        $this->jobAttributes['technos']['result'] = TechnoToujoursPareil::getInstance()->whatTechnosExist($this->jobAttributes['text']['result']);
+       $this->jobAttributes['technos']['result'] = TechnoToujoursPareil::getInstance()->whatTechnosExist($this->jobAttributes['text']['result']);
     }
 }

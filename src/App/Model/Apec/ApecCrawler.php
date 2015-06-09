@@ -28,7 +28,6 @@ class ApecCrawler {
                 $element = preg_replace('#href="#', '', $element);
                 $element = preg_replace('#"#', '', $element);
                 if ( preg_match('#xtcr#', $element, $t)){
-                    //echo $element;
                     $this->scrap('https://cadres.apec.fr'.$element);
                     //die();
                 }
@@ -51,15 +50,16 @@ class ApecCrawler {
         $result =  CrawlerModel::crawl($url);
 
         //the regex only works for non specific template
-        $this->scrapAction($result);
+        $this->scrapAction($result, $url);
     }
 
 
 
-    public function scrapAction($string)
+    public function scrapAction($string, $url)
     {
         $scrapper  = new ApecScrapper();
         $scrapper->scrap(utf8_encode($string));
+        $scrapper->setAttr('url', $url);
         $content = $scrapper->getAttributes();
         echo 'BDD<br/>';
         DBManager::getInstance()->insert($content);
