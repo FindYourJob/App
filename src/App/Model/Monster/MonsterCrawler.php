@@ -60,16 +60,15 @@ class MonsterCrawler {
         $scrapper->scrap($result);
         $scrapper->setAttr('url', $url);
         $scrapper->setAttr('date', $this->getDate($scrapper->getAttributes()['date']['result']));
-        $scrapper->setAttr('wageMin', $this->getSalary($scrapper->getAttributes()['wageMin']['result']));
+        $scrapper->setAttr('wageMin', $this->getSalary($scrapper->getAttributes()['wage']['result']));
         $content = $scrapper->getAttributes();   
-        echo 'BDD';
         DBManager::getInstance()->insert($content);
         //To test change path
         /*$file = fopen(tempnam("/var/www/html/Back-end/web", "crawl"), 'a');
         $content = var_export($content, true );
         fputs($file, $content);
-        fclose($file);*/
-        //die();
+        fclose($file);
+        //die();*/
     }
 
 
@@ -84,7 +83,8 @@ class MonsterCrawler {
         }   	
     }
 
-    public function getSalary($stringSalary){
+    public function getSalary($stringSalary)
+    {
     	if(!empty($stringSalary)){
 	        $sal = str_replace(array("\xC2\xA0"), " ", $stringSalary);
 	        if(preg_match('#([1-9][0-9]{1,2}),[0-9]{1,2} -#',$sal, $minSal)){
