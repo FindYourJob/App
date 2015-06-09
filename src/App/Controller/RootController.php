@@ -109,6 +109,20 @@ class RootController extends Controller
         return $this->app->json($result);
     }
 
+    public function getNbAdvertsCompanyByWagesAction($company, $min, $max, $pad, $limit)
+    {
+        $DB = DBManager::getInstance();
+        $result = $DB->select("SELECT COUNT(id) as nbAdverts FROM jobs WHERE company = :company AND wage >= :min AND wage <= :max GROUP BY wage div :pad ORDER BY nbAdverts ASC LIMIT :limit", array(':company' => array($company, \PDO::PARAM_STR), ':min' => array($min, \PDO::PARAM_INT), ':max' => array($max, \PDO::PARAM_INT), ':pad' => array($pad, \PDO::PARAM_INT), ':limit' => $limit));
+        return $this->app->json($result);
+    }
+
+    public function getAverageWagesByCompanyAction($limit)
+    {
+        $DB = DBManager::getInstance();
+        $result = $DB->select("SELECT company, AVG(wage) as wage FROM jobs WHERE id NOT IN (SELECT id FROM jobs WHERE wage = 0) GROUP BY company ORDER BY wage ASC LIMIT :limit", array(':limit' => $limit));
+        return $this->app->json($result);
+    }
+
     public function populateCitiesAction()
     {
         $DB = DBManager::getInstance();
