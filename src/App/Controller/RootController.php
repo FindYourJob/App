@@ -74,6 +74,13 @@ class RootController extends Controller
         return $this->app->json($result);
     }
 
+    public function getStatsEntrepriseTechnoAction($limit)
+    {
+        $DB = DBManager::getInstance();
+        $result = $DB->select('SELECT * FROM jobs GROUP BY company LIMIT :limit', array(':limit' => $limit));
+        return $this->app->json($result);
+    }
+
     public function getJobAdvertsLocatedAction($limit)
     {
         $DB = DBManager::getInstance();

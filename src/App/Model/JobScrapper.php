@@ -84,6 +84,7 @@ abstract class JobScrapper {
 
     public function setAttr($attr, $val){
         $this->jobAttributes[$attr]['result'] = $val;
+    }
     
     protected function scrapTechnos(){
         $this->jobAttributes['technos']['result'] = TechnoToujoursPareil::getInstance()->whatTechnosExist($this->jobAttributes['text']['result']);
