@@ -6,11 +6,15 @@ use App\Model\CrawlerModel;
 use App\Model\DBManager;
 
 
-class ApecCrawler {
+class ApecCrawler extends CrawlerModel {
+
+    public function __construct(){
+        parent:: __construct(new ApecScrapper);
+    } 
 
 
     // scan all the jobs offer from an url
-    public function crawl($u)
+    public function crawlMain($u)
     {
         $limit = 1;
         $i = 0;
@@ -18,7 +22,7 @@ class ApecCrawler {
         $url = $u;
         while($var){
             //echo 'URL:'.$url.'<br/>';
-            $result = CrawlerModel::crawl($url);
+            $result = $this->crawl($url);
             if(!preg_match('#<a href="([^"]*?)" class="lastItem">Suivante</a>#', $result, $res)){
                 $var = false;
             }
@@ -43,26 +47,23 @@ class ApecCrawler {
 
     }
 
-    //scrap a specific offer
-    public function scrap($url)
-    {
-        echo 'Scrap<br/>';
-        $result =  CrawlerModel::crawl($url);
-
-        //the regex only works for non specific template
-        $this->scrapAction($result, $url);
-    }
-
 
 
     public function scrapAction($string, $url)
     {
-        $scrapper  = new ApecScrapper();
-        $scrapper->scrap(utf8_encode($string));
-        $scrapper->setAttr('url', $url);
-        $content = $scrapper->getAttributes();
-        var_dump($content);
-        //DBManager::getInstance()->insert($content);
+        parent::scrapAction($string, $url);
+        $scrapper = $this->getScrapper();
+        $scrapper->setAttr('wageMin', $this->getSalaryMin($scrapper->getAttributes()['wage']['result']));
+        $this->insertIntoBdd($scrapper->getAttributes());
+        //$this->insertIntoFile($this->getScrapper()->getAttributes());
+    }
+
+    public function getSalaryMin($salary)
+    {
+        if(preg_match("#(^|Entre )([1-9][0-9])(\\s|K|0{3})#", $salary, $minsal)){
+            return $minsal[2] . "000,00";
+        } 
+        return null;
     }
 }
 

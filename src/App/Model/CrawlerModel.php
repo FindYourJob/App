@@ -3,8 +3,17 @@ namespace App\Model;
 
 class CrawlerModel
 {
-    public static function crawl($url, $params = array())
+
+    static $scrapper;
+
+    public function __construct($s)
     {
+       self::$scrapper = $s;
+    }
+
+    public function crawl($url)
+    {
+        
         // is cURL installed yet?
         if (!function_exists('curl_init')){
             die('Sorry cURL is not installed!');
@@ -22,9 +31,6 @@ class CrawlerModel
             //CURLOPT_PROXY => 'proxyweb.utc.fr:3128'
         );
 
-        if(is_array($params))
-            $curl_params = $curl_params + $params;
-
         curl_setopt_array($curl, $curl_params);
 
         // Send the request & save response to $resp
@@ -35,4 +41,41 @@ class CrawlerModel
 
         return $output;
     }
+
+    public function scrap($url)
+    {
+        echo 'Scrap<br/>';
+        $result = $this->crawl($url);
+        $this->scrapAction($result, $url);
+    }
+
+    public function scrapAction($string, $url)
+    {
+        self::$scrapper->scrap($string);
+        self::$scrapper->setAttr('url', $url);
+    }
+
+    public function getScrapper()
+    {
+        return self::$scrapper;
+    }
+
+    public function insertIntoBdd($content)
+    {
+        echo 'BDD<br/>';
+        BManager::getInstance()->insert($content);
+    }
+    
+    public function insertIntoFile($c)
+    {
+        $content = $c; 
+        $file = fopen(tempnam("/var/www/html/Back-end/web", "crawl"), 'a');
+        $content = var_export($content, true );
+        fputs($file, $content);
+        fclose($file);
+    }
+
+
+
+
 }

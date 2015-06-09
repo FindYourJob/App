@@ -6,10 +6,14 @@ use App\Model\CrawlerModel;
 use App\Model\DBManager;
 
 
-class MonsterCrawler {
+class MonsterCrawler extends CrawlerModel{
     
-    // scan all the jobs offer from an url
-    public function crawl($u)
+
+    public function __construct(){
+        parent:: __construct(new MonsterScrapper);
+    }
+
+    public function crawlMain($u)
     {
         $resume_at = 30;
         $limit = 5;
@@ -18,7 +22,7 @@ class MonsterCrawler {
         $var = true;
         $url = $u;
         while($var){
-            $result = CrawlerModel::crawl($url);
+            $result = $this->crawl($url);
             if(!preg_match('#<a class=\'box nextLink fnt5\' href=\'(.*)\' rel=\'Suivant\'#', $result, $res)){
                 $var = false;
             }
@@ -44,7 +48,7 @@ class MonsterCrawler {
    //scrap a specific offer 
     public function scrap($url)
     {
-        $result = CrawlerModel::crawl($url);
+        $result = $this->crawl($url);
         //the regex only works for non specific template
         if(preg_match('#<h2>Outils#', $result, $t)){
             $this->scrapAction($result, $url);
@@ -56,19 +60,12 @@ class MonsterCrawler {
 
     public function scrapAction($result, $url)
     {
-        $scrapper  = new MonsterScrapper();
-        $scrapper->scrap($result);
-        $scrapper->setAttr('url', $url);
+        parent::scrapAction($result, $url);
+        $scrapper = $this->getScrapper();
         $scrapper->setAttr('date', $this->getDate($scrapper->getAttributes()['date']['result']));
-        $scrapper->setAttr('wageMin', $this->getSalary($scrapper->getAttributes()['wage']['result']));
-        $content = $scrapper->getAttributes();   
-        DBManager::getInstance()->insert($content);
-        //To test change path
-        /*$file = fopen(tempnam("/var/www/html/Back-end/web", "crawl"), 'a');
-        $content = var_export($content, true );
-        fputs($file, $content);
-        fclose($file);
-        //die();*/
+        $scrapper->setAttr('wageMin', $this->getSalary($scrapper->getAttributes()['wage']['result']));   
+        $this->insertIntoBdd($scrapper->getAttributes());
+        //$this->insertIntoFile($scrapper->getAttributes());
     }
 
 
