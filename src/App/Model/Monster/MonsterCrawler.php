@@ -11,8 +11,8 @@ class MonsterCrawler {
     // scan all the jobs offer from an url
     public function crawl($u)
     {
-        $resume_at = 1;
-        $limit = 4;
+        $resume_at = 30;
+        $limit = 5;
         $i = 0;
 
         $var = true;

@@ -88,6 +88,27 @@ class RootController extends Controller
         return $this->app->json($result);
     }
 
+    public function getNbAdvertsByCompanyAction($limit)
+    {
+        $DB = DBManager::getInstance();
+        $result = $DB->select("SELECT company, COUNT(id) as nbAdverts FROM jobs GROUP BY company ORDER BY nbAdverts ASC LIMIT :limit", array(':limit' => $limit));
+        return $this->app->json($result);
+    }
+
+    public function getNbAdvertsByTechnosAction($limit)
+    {
+        $DB = DBManager::getInstance();
+        $result = $DB->select("SELECT name, COUNT(idTechno) as nbAdverts FROM linkedToTechno GROUP BY idTechno ORDER BY nbAdverts ASC LIMIT :limit", array(':limit' => $limit));
+        return $this->app->json($result);
+    }
+
+    public function getNbAdvertsCompanyByTechnosAction($company, $limit)
+    {
+        $DB = DBManager::getInstance();
+        $result = $DB->select("SELECT name, COUNT(idTechno) as nbAdverts FROM linkedToTechno ltt, jobs j WHERE ltt.idJob = j.id AND j.company = :company GROUP BY idTechno ORDER BY nbAdverts ASC LIMIT :limit", array(':company' => array($company, \PDO::PARAM_STR), ':limit' => $limit));
+        return $this->app->json($result);
+    }
+
     public function populateCitiesAction()
     {
         $DB = DBManager::getInstance();

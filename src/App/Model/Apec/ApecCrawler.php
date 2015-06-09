@@ -12,7 +12,7 @@ class ApecCrawler {
     // scan all the jobs offer from an url
     public function crawl($u)
     {
-        $limit = 5;
+        $limit = 1;
         $i = 0;
         $var = true;
         $url = $u;
@@ -61,14 +61,8 @@ class ApecCrawler {
         $scrapper->scrap(utf8_encode($string));
         $scrapper->setAttr('url', $url);
         $content = $scrapper->getAttributes();
-        echo 'BDD<br/>';
-        DBManager::getInstance()->insert($content);
-        // To test change path
-        /*$file = fopen(tempnam("/var/www/html/Back-end/web", "crawl"), 'a');
-        $content = var_export($content, true );
-        fputs($file, $content);
-        fclose($file);*/
-        //die();
+        var_dump($content);
+        //DBManager::getInstance()->insert($content);
     }
 }
 

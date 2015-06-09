@@ -124,7 +124,10 @@ class DBManager {
             $query = $this->db->prepare($queryString);
             if(!empty($params))
             foreach($params as $param => $value){
-                $query->bindParam($param, $value);
+                if(is_array($value))
+                    $query->bindParam($param, $value[0], $value[1]);
+                else
+                    $query->bindParam($param, $value);
             }
             $query->execute();
 
