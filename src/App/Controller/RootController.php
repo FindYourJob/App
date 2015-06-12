@@ -64,6 +64,13 @@ class RootController extends Controller
     {
         $DB = DBManager::getInstance();
         $result = $DB->select('SELECT * FROM jobs LIMIT :limit', array(':limit' => $limit));
+
+        foreach($result as $key => $value){
+            foreach($value as $k => $v)
+                if($k == 'technos')
+                    $result[$key][$k] = json_decode($v);
+        }
+
         return $this->app->json($result);
     }
 
