@@ -20,14 +20,14 @@ class RootController extends Controller
     public function crawlAction()
     {
         $crawler  = new MonsterCrawler();
-        $crawler->crawl('http://offres.monster.fr/rechercher/Informatique-Technologies_4?pg=1');
+        $crawler->crawlMain('http://offres.monster.fr/rechercher/Informatique-Technologies_4?pg=1');
         return $this->render('crawl', array('content' => ''));
     }
 
     public function apecCrawlAction()
     {
         $crawler  = new ApecCrawler();
-        $crawler->crawl('https://cadres.apec.fr/MesOffres/RechercheOffres/ApecRechercheOffre.jsp?keywords=informatique');
+        $crawler->crawlMain('https://cadres.apec.fr/MesOffres/RechercheOffres/ApecRechercheOffre.jsp?keywords=informatique');
         return $this->render('crawl', array('content' => ''));
     }
 
