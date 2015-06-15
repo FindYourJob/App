@@ -136,6 +136,12 @@ class DBManager {
                 $output[] = $result;
             }
 
+            foreach($output as $key => $value){
+                foreach($value as $k => $v)
+                    if($k == 'technos')
+                        $output[$key][$k] = json_decode($v);
+            }
+
             return $output;
 
         }catch(\Exception $e){
